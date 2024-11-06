@@ -22,7 +22,7 @@ has_code(saphan_taksin, s06).
 has_code(krung_thon_buri, s07).
 has_code(wongwian_yai, s08).
 has_code(pho_nimit, s09).
-has_code(talat_phlu, s10
+has_code(talat_phlu, s10).
 has_code(wutthakat, s11).
 has_code(bang_wa, s12).
 

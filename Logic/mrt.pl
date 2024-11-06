@@ -16,9 +16,8 @@ has_code(yaek_tiwanon,pp13).
 has_code(wong_sawang,pp14).
 has_code(bang_son,pp15).
 has_code(tao_poon,pp16).
-has_code(tao_poon,bl10).
 
-% blue line code
+% blue line
 has_code(tha_phra,bl01).
 has_code(charan13,bl02).
 has_code(fai_chai,bl03).
@@ -28,7 +27,7 @@ has_code(sirindhorn,bl06).
 has_code(bang_phlat,bl07).
 has_code(bang_o,bl08).
 has_code(bang_pho,bl09).
-
+has_code(tao_poon,bl10).
 has_code(bang_sue,bl11).
 has_code(kamphaeng_phet,bl12).
 has_code(chatuchak_park,bl13).
@@ -52,13 +51,71 @@ has_code(sam_yot,bl30).
 has_code(sanam_chai,bl31).
 has_code(itsaraphap,bl32).
 has_code(bang_phai,bl33).
-has_code(bang_wa_pier,bl34).
+has_code(bang_wa,bl34).
 has_code(phetkasem48,bl35).
 has_code(phasi_charoen,bl36).
 has_code(bang_khae,bl37).
 has_code(lak_song,bl38).
 
-% distance between station in blue line
+% yellow line
+has_code(lat_phrao, yl01).
+has_code(phawana, yl02).
+has_code(chok_chai4, yl03).
+has_code(lat_phrao71, yl04).
+has_code(lat_phrao83, yl05).
+has_code(mahat_thai, yl06).
+has_code(lat_phrao101, yl07).
+has_code(bang_kapi, yl08).
+has_code(yaek_lam_sali, yl09).
+has_code(si_kritha, yl10).
+has_code(hua_mak, yl11).
+has_code(kalantan, yl12).
+has_code(si_nut, yl13).
+has_code(srinagarindra38, yl14).
+has_code(suan_luang_rama9, yl15).
+has_code(si_udom, yl16).
+has_code(si_iam, yl17).
+has_code(sii_la_Salle, yl18).
+has_code(si_bearing, yl19).
+has_code(si_dan, yl20).
+has_code(si_thepha, yl21).
+has_code(thipphawan, yl22).
+has_code(samrong, yl23).
+
+% pink line
+has_code(nonthaburi_civic_center, pk01).
+has_code(khae_rai, pk02).
+has_code(sanambin_nam, pk03).
+has_code(samakkhi, pk04).
+has_code(royal_irrigation_department, pk05).
+has_code(yaek_pak_kret, pk06).
+has_code(pak_kret_bypass, pk07).
+has_code(chaeng_watthana_pak_kret28, pk08).
+has_code(si_rat, pk09).
+has_code(muang_thong_thani, pk10).
+has_code(chaeng_watthana14, pk11).
+has_code(government_complex, pk12).
+has_code(national_telecom, pk13).
+has_code(lak_si, pk14).
+has_code(rajabhat_phranakhon, pk15).
+has_code(wat_phra_sri_mahathat, pk16).
+has_code(ram_inthra3, pk17).
+has_code(lat_pla_khao, pk18).
+has_code(ram_inthra_kor_mor4, pk19).
+has_code(maiyalap, pk20).
+has_code(vacharaphol, pk21).
+has_code(ram_inthra_kor_mor6, pk22).
+has_code(khu_bon, pk23).
+has_code(ram_inthra_kor_mor9, pk24).
+has_code(outer_ring_road_ram_inthra, pk25).
+has_code(nopparat, pk26).
+has_code(bang_chan, pk27).
+has_code(setthabutbamphen, pk28).
+has_code(min_buri_market, pk29).
+has_code(min_buri, pk30).
+
+
+% distance between station in purple line
 to_via_purple_line(khlog_bang_phai,talad_bang_yai,1000).
 
 to_via_purple_line(talad_bang_yai,khlog_bang_phai,1000).
@@ -137,12 +194,12 @@ to_via_blue_line(tha_phra,bang_phai,1200).
 to_via_blue_line(tha_phra,itsaraphap,2000).
 
 to_via_blue_line(bang_phai,tha_phra,1200).
-to_via_blue_line(bang_phai,bang_wa_pier,1100).
+to_via_blue_line(bang_phai,bang_wa,1100).
 
-to_via_blue_line(bang_wa_pier,bang_phai,1100).
-to_via_blue_line(bang_wa_pier,phetkasem48,1300).
+to_via_blue_line(bang_wa,bang_phai,1100).
+to_via_blue_line(bang_wa,phetkasem48,1300).
 
-to_via_blue_line(phetkasem48,bang_wa_pier,1300).
+to_via_blue_line(phetkasem48,bang_wa,1300).
 to_via_blue_line(phetkasem48,phasi_charoen,1200).
 
 to_via_blue_line(phasi_charoen,phetkasem48,1200).
