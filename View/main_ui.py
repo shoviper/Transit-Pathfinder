@@ -45,7 +45,7 @@ class Ui_MainWindow(object):
         self.mainpage.setObjectName(u"mainpage")
         self.nostationradio = QRadioButton(self.mainpage)
         self.nostationradio.setObjectName(u"nostationradio")
-        self.nostationradio.setGeometry(QRect(30, 360, 231, 21))
+        self.nostationradio.setGeometry(QRect(30, 330, 231, 21))
         self.nostationradio.setStyleSheet(u"QRadioButton {\n"
 "    background-color: #F4F4DB; \n"
 "    color: #4d4d4d;             \n"
@@ -69,22 +69,22 @@ class Ui_MainWindow(object):
 "")
         self.destcombobox = QComboBox(self.mainpage)
         self.destcombobox.setObjectName(u"destcombobox")
-        self.destcombobox.setGeometry(QRect(30, 230, 250, 25))
+        self.destcombobox.setGeometry(QRect(190, 180, 250, 41))
         self.preferlabel = QLabel(self.mainpage)
         self.preferlabel.setObjectName(u"preferlabel")
-        self.preferlabel.setGeometry(QRect(10, 310, 361, 21))
+        self.preferlabel.setGeometry(QRect(10, 280, 361, 21))
         self.preferlabel.setStyleSheet(u"color: #ff5349;\n"
 "font-size: 22px;\n"
 "")
         self.destlabel = QLabel(self.mainpage)
         self.destlabel.setObjectName(u"destlabel")
-        self.destlabel.setGeometry(QRect(30, 180, 121, 21))
+        self.destlabel.setGeometry(QRect(30, 190, 121, 21))
         self.destlabel.setStyleSheet(u"color: #000000; \n"
 "font-size: 20px;\n"
 "")
         self.timetakenradio = QRadioButton(self.mainpage)
         self.timetakenradio.setObjectName(u"timetakenradio")
-        self.timetakenradio.setGeometry(QRect(30, 410, 121, 20))
+        self.timetakenradio.setGeometry(QRect(30, 380, 121, 20))
         self.timetakenradio.setStyleSheet(u"QRadioButton {\n"
 "    background-color: #F4F4DB; \n"
 "    color: #4d4d4d;             \n"
@@ -121,10 +121,10 @@ class Ui_MainWindow(object):
 "")
         self.startcombobox = QComboBox(self.mainpage)
         self.startcombobox.setObjectName(u"startcombobox")
-        self.startcombobox.setGeometry(QRect(30, 110, 250, 25))
+        self.startcombobox.setGeometry(QRect(190, 80, 250, 41))
         self.costradio = QRadioButton(self.mainpage)
         self.costradio.setObjectName(u"costradio")
-        self.costradio.setGeometry(QRect(30, 460, 71, 20))
+        self.costradio.setGeometry(QRect(30, 430, 71, 20))
         self.costradio.setStyleSheet(u"QRadioButton {\n"
 "    background-color: #F4F4DB; \n"
 "    color: #4d4d4d;             \n"
@@ -148,7 +148,7 @@ class Ui_MainWindow(object):
 "")
         self.startlabel = QLabel(self.mainpage)
         self.startlabel.setObjectName(u"startlabel")
-        self.startlabel.setGeometry(QRect(30, 60, 61, 21))
+        self.startlabel.setGeometry(QRect(30, 90, 61, 21))
         self.startlabel.setStyleSheet(u"color: #000000; \n"
 "font-size: 20px;\n"
 "")
