@@ -1,12 +1,12 @@
 % station has code XXXX
-% red line in left side
-hascode(bang_sue, rw01).
+% dark red line
+hascode(krung_thep_apiwat, rw01).
 hascode(bang_son, rw02).
 hascode(bang_bamru, rw03).
 hascode(talingchan, rw04).
 
-% red line in right side
-hascode(bang_sue, rn01).
+% light red line
+hascode(krung_thep_apiwat, rn01).
 hascode(chatuchak, rn02).
 hascode(wat_samian_nari, rn03).
 hascode(bang_khen, rn04).
