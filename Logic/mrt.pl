@@ -75,7 +75,7 @@ has_code(srinagarindra38, yl14).
 has_code(suan_luang_rama9, yl15).
 has_code(si_udom, yl16).
 has_code(si_iam, yl17).
-has_code(sii_la_Salle, yl18).
+has_code(si_la_salle, yl18).
 has_code(si_bearing, yl19).
 has_code(si_dan, yl20).
 has_code(si_thepha, yl21).
@@ -114,6 +114,94 @@ has_code(setthabutbamphen, pk28).
 has_code(min_buri_market, pk29).
 has_code(min_buri, pk30).
 
+% distance between station in pink line
+to_via_pink_line(nonthaburi_civic_center, khae_rai, 1100).
+
+to_via_pink_line(khae_rai, nonthaburi_civic_center, 1100).
+to_via_pink_line(khae_rai, sanambin_nam, 1400).
+
+to_via_pink_line(sanambin_nam, khae_rai, 1400).
+to_via_pink_line(sanambin_nam, samakkhi, 1700).
+
+to_via_pink_line(samakkhi, sanambin_nam, 1700).
+to_via_pink_line(samakkhi, royal_irrigation_department, 1100).
+
+to_via_pink_line(royal_irrigation_department, samakkhi, 1100).
+to_via_pink_line(royal_irrigation_department, yaek_pak_kret, 950).
+
+to_via_pink_line(yaek_pak_kret, royal_irrigation_department, 950).
+to_via_pink_line(yaek_pak_kret, pak_kret_bypass, 1200).
+
+to_via_pink_line(pak_kret_bypass, yaek_pak_kret, 1200).
+to_via_pink_line(pak_kret_bypass, chaeng_watthana_pak_kret28, 1500).
+
+to_via_pink_line(chaeng_watthana_pak_kret28, pak_kret_bypass, 1500).
+to_via_pink_line(chaeng_watthana_pak_kret28, si_rat, 1300).
+
+to_via_pink_line(si_rat, chaeng_watthana_pak_kret28, 1300).
+to_via_pink_line(si_rat, muang_thong_thani, 1400).
+
+to_via_pink_line(muang_thong_thani, si_rat, 1400).
+to_via_pink_line(muang_thong_thani, chaeng_watthana14, 1400).
+
+to_via_pink_line(chaeng_watthana14, muang_thong_thani, 1400).
+to_via_pink_line(chaeng_watthana14, government_complex, 800).
+
+to_via_pink_line(government_complex, chaeng_watthana14, 800).
+to_via_pink_line(government_complex, national_telecom, 1600).
+
+to_via_pink_line(national_telecom, government_complex, 1600).
+to_via_pink_line(national_telecom, lak_si, 1100).
+
+to_via_pink_line(lak_si, national_telecom, 1100).
+to_via_pink_line(lak_si, rajabhat_phranakhon, 950).
+
+to_via_pink_line(rajabhat_phranakhon, lak_si, 950).
+to_via_pink_line(rajabhat_phranakhon, wat_phra_sri_mahathat, 2300).
+
+to_via_pink_line(wat_phra_sri_mahathat, rajabhat_phranakhon, 2300).
+to_via_pink_line(wat_phra_sri_mahathat, ram_inthra3, 850).
+
+to_via_pink_line(ram_inthra3, wat_phra_sri_mahathat, 850).
+to_via_pink_line(ram_inthra3, lat_pla_khao, 1900).
+
+to_via_pink_line(lat_pla_khao, ram_inthra3, 1900).
+to_via_pink_line(lat_pla_khao, ram_inthra_kor_mor4, 1000).
+
+to_via_pink_line(ram_inthra_kor_mor4, lat_pla_khao, 1000).
+to_via_pink_line(ram_inthra_kor_mor4, maiyalap, 750).
+
+to_via_pink_line(maiyalap, ram_inthra_kor_mor4, 750).
+to_via_pink_line(maiyalap, vacharaphol, 1500).
+
+to_via_pink_line(vacharaphol, maiyalap, 1500).
+to_via_pink_line(vacharaphol, ram_inthra_kor_mor6, 850).
+
+to_via_pink_line(ram_inthra_kor_mor6, vacharaphol, 850).
+to_via_pink_line(ram_inthra_kor_mor6, khu_bon, 1000).
+
+to_via_pink_line(khu_bon, ram_inthra_kor_mor6, 1000).
+to_via_pink_line(khu_bon, ram_inthra_kor_mor9, 1200).
+
+to_via_pink_line(ram_inthra_kor_mor9, khu_bon, 1200).
+to_via_pink_line(ram_inthra_kor_mor9, outer_ring_road_ram_inthra, 1700).
+
+to_via_pink_line(outer_ring_road_ram_inthra, ram_inthra_kor_mor9, 1700).
+to_via_pink_line(outer_ring_road_ram_inthra, nopparat, 1300).
+
+to_via_pink_line(nopparat, outer_ring_road_ram_inthra, 1300).
+to_via_pink_line(nopparat, bang_chan, 2000).
+
+to_via_pink_line(bang_chan, nopparat, 2000).
+to_via_pink_line(bang_chan, setthabutbamphen, 1100).
+
+to_via_pink_line(setthabutbamphen, bang_chan, 1100).
+to_via_pink_line(setthabutbamphen, min_buri_market, 1400).
+
+to_via_pink_line(min_buri_market, setthabutbamphen, 1400).
+to_via_pink_line(min_buri_market, min_buri, 1000).
+
+to_via_pink_line(min_buri, min_buri_market, 1000).
 
 % distance between station in purple line
 to_via_purple_line(khlog_bang_phai,talad_bang_yai,1000).
@@ -278,3 +366,72 @@ to_via_blue_line(sanam_chai,itsaraphap,1300).
 
 to_via_blue_line(itsaraphap,sanam_chai,1300).
 to_via_blue_line(itsaraphap,tha_phra,2000).
+
+
+% distance between station in yellow line
+to_via_yellow_line(lat_phrao, phawana, 1500).
+
+to_via_yellow_line(phawana, lat_phrao, 1500).
+to_via_yellow_line(phawana, chok_chai4, 1500).
+
+to_via_yellow_line(chok_chai4, phawana, 1500).
+to_via_yellow_line(chok_chai4, lat_phrao71, 1700).
+
+to_via_yellow_line(lat_phrao71, chok_chai4, 1700).
+to_via_yellow_line(lat_phrao71, lat_phrao83, 800).
+
+to_via_yellow_line(lat_phrao83, lat_phrao71, 800).
+to_via_yellow_line(lat_phrao83, mahat_thai, 1200).
+
+to_via_yellow_line(mahat_thai, lat_phrao83, 1200).
+to_via_yellow_line(mahat_thai, lat_phrao101, 900).
+
+to_via_yellow_line(lat_phrao101, mahat_thai, 900).
+to_via_yellow_line(lat_phrao101, bang_kapi, 1200).
+
+to_via_yellow_line(bang_kapi, lat_phrao101, 1200).
+to_via_yellow_line(bang_kapi, yaek_lam_sali, 1200).
+
+to_via_yellow_line(yaek_lam_sali, bang_kapi, 1200).
+to_via_yellow_line(yaek_lam_sali, si_kritha, 1300).
+
+to_via_yellow_line(si_kritha, yaek_lam_sali, 1300).
+to_via_yellow_line(si_kritha, hua_mak, 1700).
+
+to_via_yellow_line(hua_mak, si_kritha, 1700).
+to_via_yellow_line(hua_mak, kalantan, 1400).
+
+to_via_yellow_line(kalantan, hua_mak, 1400).
+to_via_yellow_line(kalantan, si_nut, 1700).
+
+to_via_yellow_line(si_nut, kalantan, 1700).
+to_via_yellow_line(si_nut, srinagarindra38, 1300).
+
+to_via_yellow_line(srinagarindra38, si_nut, 1300).
+to_via_yellow_line(srinagarindra38, suan_luang_rama9, 1100).
+
+to_via_yellow_line(suan_luang_rama9, srinagarindra38, 1100).
+to_via_yellow_line(suan_luang_rama9, si_udom, 1500).
+
+to_via_yellow_line(si_udom, suan_luang_rama9, 1500).
+to_via_yellow_line(si_udom, si_iam, 2100).
+
+to_via_yellow_line(si_iam, si_udom, 2100).
+to_via_yellow_line(si_iam, si_la_salle, 3600).
+
+to_via_yellow_line(si_la_salle, si_iam, 3600).
+to_via_yellow_line(si_la_salle, si_bearing, 1400).
+
+to_via_yellow_line(si_bearing, si_la_salle, 1400).
+to_via_yellow_line(si_bearing, si_dan, 1600).
+
+to_via_yellow_line(si_dan, si_bearing, 1600).
+to_via_yellow_line(si_dan, si_thepha, 900).
+
+to_via_yellow_line(si_thepha, si_dan, 900).
+to_via_yellow_line(si_thepha, thipphawan, 2200).
+
+to_via_yellow_line(thipphawan, si_thepha, 2200).
+to_via_yellow_line(thipphawan, samrong, 1800).
+
+to_via_yellow_line(samrong, thipphawan, 1800).
