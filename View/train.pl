@@ -8,45 +8,48 @@ has_code(ban_thap_chang, a03).
 has_code(lat_krabang, a02).
 has_code(suvarnabhumi, a01).
 
-to_via_red_line(phaya_thai, ratchaprarop, 1000).
+% distance between station in APL line
+distance(phaya_thai, ratchaprarop, 1000).
 
-to_via_red_line(ratchaprarop, phaya_thai, 1000).
-to_via_red_line(ratchaprarop, makkasan, 2500).
+distance(ratchaprarop, phaya_thai, 1000).
+distance(ratchaprarop, makkasan, 2500).
 
-to_via_red_line(makkasan, ratchaprarop, 2500).
-to_via_red_line(makkasan, ramkhamhaeng, 4400).
+distance(makkasan, ratchaprarop, 2500).
+distance(makkasan, ramkhamhaeng, 4400).
 
-to_via_red_line(ramkhamhaeng, makkasan, 4400).
-to_via_red_line(ramkhamhaeng, hua_mak, 5000).
+distance(ramkhamhaeng, makkasan, 4400).
+distance(ramkhamhaeng, hua_mak, 5000).
 
-to_via_red_line(hua_mak, ramkhamhaeng, 5000).
-to_via_red_line(hua_mak, ban_thap_chang, 5700).
+distance(hua_mak, ramkhamhaeng, 5000).
+distance(hua_mak, ban_thap_chang, 5700).
 
-to_via_red_line(ban_thap_chang, hua_mak, 5700).
-to_via_red_line(ban_thap_chang, lat_krabang, 6500).
+distance(ban_thap_chang, hua_mak, 5700).
+distance(ban_thap_chang, lat_krabang, 6500).
 
-to_via_red_line(lat_krabang, ban_thap_chang, 6500).
-to_via_red_line(lat_krabang, suvarnabhumi, 6000).
+distance(lat_krabang, ban_thap_chang, 6500).
+distance(lat_krabang, suvarnabhumi, 6000).
 
-to_via_red_line(suvarnabhumi, lat_krabang, 6000).
+distance(suvarnabhumi, lat_krabang, 6000).
 
 
 % BTS
+% gold line
 has_code(krung_thon_buri, G01).
 has_code(charoen_nakhon, G02).
 has_code(khlong_san, G03).
 
-to_via_gold_line(krung_thon_buri, charoen_nakhon, 1300).
+% distance between station in gold line
+distance(krung_thon_buri, charoen_nakhon, 1300).
 
-to_via_gold_line(charoen_nakhon, khlong_san, 550).
-to_via_gold_line(charoen_nakhon, krung_thon_buri, 1300).
+distance(charoen_nakhon, khlong_san, 550).
+distance(charoen_nakhon, krung_thon_buri, 1300).
 
-to_via_gold_line(khlong_san, charoen_nakhon, 550).
+distance(khlong_san, charoen_nakhon, 550).
 
 has_code(national_stadium, w01).
 has_code(siam, CEN).
 
-% dark_green_line
+% dark green line
 has_code(ratchadamri, s01).
 has_code(sala_daeng, s02).
 has_code(chong_nonsi, s03).
@@ -60,7 +63,7 @@ has_code(talat_phlu, s10).
 has_code(wutthakat, s11).
 has_code(bang_wa, s12).
 
-% light_green_line
+% light green line
 has_code(chit_lom, e01).
 has_code(phloen_chit, e02).
 has_code(nana, e03).
@@ -109,187 +112,187 @@ has_code(royal_thai_air_force_museum, n22).
 has_code(yaek_kor_por_aor, n23).
 has_code(khu_khot, n24).
 
-% to_via_dark_green_line
-to_via_dark_green_line(national_stadium, siam, 500).
+% distance between station in dark green line
+distance(national_stadium, siam, 500).
 
-to_via_dark_green_line(siam, national_stadium, 500).
-to_via_dark_green_line(siam, ratchadamri, 1000).
+distance(siam, national_stadium, 500).
+distance(siam, ratchadamri, 1000).
 
-to_via_dark_green_line(ratchadamri, siam, 1000).
-to_via_dark_green_line(ratchadamri, sala_daeng, 1300).
+distance(ratchadamri, siam, 1000).
+distance(ratchadamri, sala_daeng, 1300).
 
-to_via_dark_green_line(sala_daeng, ratchadamri, 1300).
-to_via_dark_green_line(sala_daeng, chong_nonsi, 1000).
+distance(sala_daeng, ratchadamri, 1300).
+distance(sala_daeng, chong_nonsi, 1000).
 
-to_via_dark_green_line(chong_nonsi, sala_daeng, 1000).
-to_via_dark_green_line(chong_nonsi, saint_louis, 600).
+distance(chong_nonsi, sala_daeng, 1000).
+distance(chong_nonsi, saint_louis, 600).
 
-to_via_dark_green_line(saint_louis, chong_nonsi, 600).
-to_via_dark_green_line(saint_louis, surasak, 500).
+distance(saint_louis, chong_nonsi, 600).
+distance(saint_louis, surasak, 500).
 
-to_via_dark_green_line(surasak, saint_louis, 500).
-to_via_dark_green_line(surasak, saphan_taksin, 750).
+distance(surasak, saint_louis, 500).
+distance(surasak, saphan_taksin, 750).
 
-to_via_dark_green_line(saphan_taksin, surasak, 750).
-to_via_dark_green_line(saphan_taksin, krung_thon_buri, 1300).
+distance(saphan_taksin, surasak, 750).
+distance(saphan_taksin, krung_thon_buri, 1300).
 
-to_via_dark_green_line(krung_thon_buri, saphan_taksin, 1300).
-to_via_dark_green_line(krung_thon_buri, wongwian_yai, 900).
+distance(krung_thon_buri, saphan_taksin, 1300).
+distance(krung_thon_buri, wongwian_yai, 900).
 
-to_via_dark_green_line(wongwian_yai, krung_thon_buri, 900).
-to_via_dark_green_line(wongwian_yai, pho_nimit, 700).
+distance(wongwian_yai, krung_thon_buri, 900).
+distance(wongwian_yai, pho_nimit, 700).
 
-to_via_dark_green_line(pho_nimit, wongwian_yai, 700).
-to_via_dark_green_line(pho_nimit, talat_phlu, 850).
+distance(pho_nimit, wongwian_yai, 700).
+distance(pho_nimit, talat_phlu, 850).
 
-to_via_dark_green_line(talat_phlu, pho_nimit, 850).
-to_via_dark_green_line(talat_phlu, wutthakat, 900).
+distance(talat_phlu, pho_nimit, 850).
+distance(talat_phlu, wutthakat, 900).
 
-to_via_dark_green_line(wutthakat, talat_phlu, 900).
-to_via_dark_green_line(wutthakat, bang_wa, 2000).
+distance(wutthakat, talat_phlu, 900).
+distance(wutthakat, bang_wa, 2000).
 
-to_via_dark_green_line(bang_wa, wutthakat, 2000).
+distance(bang_wa, wutthakat, 2000).
 
-% to_via_light_green_line
-to_via_light_green_line(siam, chit_lom, 850).
+% distance between station in light green line
+distance(siam, chit_lom, 850).
 
-to_via_light_green_line(chit_lom, siam, 850).
-to_via_light_green_line(chit_lom, phloen_chit, 1000).
+distance(chit_lom, siam, 850).
+distance(chit_lom, phloen_chit, 1000).
 
-to_via_light_green_line(phloen_chit, chit_lom, 1000).
-to_via_light_green_line(phloen_chit, nana, 750).
+distance(phloen_chit, chit_lom, 1000).
+distance(phloen_chit, nana, 750).
 
-to_via_light_green_line(nana, phloen_chit, 750).
-to_via_light_green_line(nana, asok, 550).
+distance(nana, phloen_chit, 750).
+distance(nana, asok, 550).
 
-to_via_light_green_line(asok, nana, 550).
-to_via_light_green_line(asok, phrom_phong, 1300).
+distance(asok, nana, 550).
+distance(asok, phrom_phong, 1300).
 
-to_via_light_green_line(phrom_phong, asok, 1300).
-to_via_light_green_line(phrom_phong, thong_lo, 1200).
+distance(phrom_phong, asok, 1300).
+distance(phrom_phong, thong_lo, 1200).
 
-to_via_light_green_line(thong_lo, phrom_phong, 1200).
-to_via_light_green_line(thong_lo, ekkamai, 800).
+distance(thong_lo, phrom_phong, 1200).
+distance(thong_lo, ekkamai, 800).
 
-to_via_light_green_line(ekkamai, thong_lo, 800).
-to_via_light_green_line(ekkamai, phra_khanong, 800).
+distance(ekkamai, thong_lo, 800).
+distance(ekkamai, phra_khanong, 800).
 
-to_via_light_green_line(phra_khanong, ekkamai, 800).
-to_via_light_green_line(phra_khanong, on_nut, 1700).
+distance(phra_khanong, ekkamai, 800).
+distance(phra_khanong, on_nut, 1700).
 
-to_via_light_green_line(on_nut, phra_khanong, 1700).
-to_via_light_green_line(on_nut, bang_chak, 950).
+distance(on_nut, phra_khanong, 1700).
+distance(on_nut, bang_chak, 950).
 
-to_via_light_green_line(bang_chak, on_nut, 950).
-to_via_light_green_line(bang_chak, punnawithi, 750).
+distance(bang_chak, on_nut, 950).
+distance(bang_chak, punnawithi, 750).
 
-to_via_light_green_line(punnawithi, bang_chak, 750).
-to_via_light_green_line(punnawithi, udom_suk, 950).
+distance(punnawithi, bang_chak, 750).
+distance(punnawithi, udom_suk, 950).
 
-to_via_light_green_line(udom_suk, punnawithi, 950).
-to_via_light_green_line(udom_suk, bang_na, 1200).
+distance(udom_suk, punnawithi, 950).
+distance(udom_suk, bang_na, 1200).
 
-to_via_light_green_line(bang_na, udom_suk, 1200).
-to_via_light_green_line(bang_na, bearing, 700).
+distance(bang_na, udom_suk, 1200).
+distance(bang_na, bearing, 700).
 
-to_via_light_green_line(bearing, bang_na, 700).
-to_via_light_green_line(bearing, samrong, 1800).
+distance(bearing, bang_na, 700).
+distance(bearing, samrong, 1800).
 
-to_via_light_green_line(samrong, bearing, 1800).
-to_via_light_green_line(samrong, pu_chao, 900).
+distance(samrong, bearing, 1800).
+distance(samrong, pu_chao, 900).
 
-to_via_light_green_line(pu_chao, samrong, 900).
-to_via_light_green_line(pu_chao, chang_erawan, 1700).
+distance(pu_chao, samrong, 900).
+distance(pu_chao, chang_erawan, 1700).
 
-to_via_light_green_line(chang_erawan, pu_chao, 1700).
-to_via_light_green_line(chang_erawan, royal_thai_naval_academy, 1500).
+distance(chang_erawan, pu_chao, 1700).
+distance(chang_erawan, royal_thai_naval_academy, 1500).
 
-to_via_light_green_line(royal_thai_naval_academy, chang_erawan, 1500).
-to_via_light_green_line(royal_thai_naval_academy, pak_nam, 700).
+distance(royal_thai_naval_academy, chang_erawan, 1500).
+distance(royal_thai_naval_academy, pak_nam, 700).
 
-to_via_light_green_line(pak_nam, royal_thai_naval_academy, 700).
-to_via_light_green_line(pak_nam, srinagarindra, 1800).
+distance(pak_nam, royal_thai_naval_academy, 700).
+distance(pak_nam, srinagarindra, 1800).
 
-to_via_light_green_line(srinagarindra, pak_nam, 1800).
-to_via_light_green_line(srinagarindra, phraek_sa, 900).
+distance(srinagarindra, pak_nam, 1800).
+distance(srinagarindra, phraek_sa, 900).
 
-to_via_light_green_line(phraek_sa, srinagarindra, 900).
-to_via_light_green_line(phraek_sa, sai_luat, 650).
+distance(phraek_sa, srinagarindra, 900).
+distance(phraek_sa, sai_luat, 650).
 
-to_via_light_green_line(sai_luat, phraek_sa, 650).
-to_via_light_green_line(sai_luat, kheha, 1000).
+distance(sai_luat, phraek_sa, 650).
+distance(sai_luat, kheha, 1000).
 
-to_via_light_green_line(kheha, sai_luat, 1000).
+distance(kheha, sai_luat, 1000).
 
-to_via_light_green_line(siam, ratchathewi, 800).
+distance(siam, ratchathewi, 800).
 
-to_via_light_green_line(ratchathewi, siam, 800).
-to_via_light_green_line(ratchathewi, phaya_thai, 550).
+distance(ratchathewi, siam, 800).
+distance(ratchathewi, phaya_thai, 550).
 
-to_via_light_green_line(phaya_thai, ratchathewi, 550).
-to_via_light_green_line(phaya_thai, victory_monument, 750).
+distance(phaya_thai, ratchathewi, 550).
+distance(phaya_thai, victory_monument, 750).
 
-to_via_light_green_line(victory_monument, phaya_thai, 750).
-to_via_light_green_line(victory_monument, sanam_pao, 1200).
+distance(victory_monument, phaya_thai, 750).
+distance(victory_monument, sanam_pao, 1200).
 
-to_via_light_green_line(sanam_pao, victory_monument, 1200).
-to_via_light_green_line(sanam_pao, ari, 1000).
+distance(sanam_pao, victory_monument, 1200).
+distance(sanam_pao, ari, 1000).
 
-to_via_light_green_line(ari, sanam_pao, 1000).
-to_via_light_green_line(ari, saphan_khwai, 1600).
+distance(ari, sanam_pao, 1000).
+distance(ari, saphan_khwai, 1600).
 
-to_via_light_green_line(saphan_khwai, SenaRuam, 1600).
-to_via_light_green_line(saphan_khwai, mo_chit, 1100).
+distance(saphan_khwai, SenaRuam, 1600).
+distance(saphan_khwai, mo_chit, 1100).
 
-to_via_light_green_line(mo_chit, saphan_khwai, 1100).
-to_via_light_green_line(mo_chit, ha_yaek_lat_phrao, 1800).
+distance(mo_chit, saphan_khwai, 1100).
+distance(mo_chit, ha_yaek_lat_phrao, 1800).
 
-to_via_light_green_line(ha_yaek_lat_phrao, mo_chit, 1800).
-to_via_light_green_line(ha_yaek_lat_phrao, phahon_yothin24, 950).
+distance(ha_yaek_lat_phrao, mo_chit, 1800).
+distance(ha_yaek_lat_phrao, phahon_yothin24, 950).
 
-to_via_light_green_line(phahon_yothin24, ha_yaek_lat_phrao, 950).
-to_via_light_green_line(phahon_yothin24, ratchayothin, 700).
+distance(phahon_yothin24, ha_yaek_lat_phrao, 950).
+distance(phahon_yothin24, ratchayothin, 700).
 
-to_via_light_green_line(ratchayothin, phahon_yothin24, 700).
-to_via_light_green_line(ratchayothin, sena_nikhom, 700).
+distance(ratchayothin, phahon_yothin24, 700).
+distance(ratchayothin, sena_nikhom, 700).
 
-to_via_light_green_line(sena_nikhom, ratchayothin, 700).
-to_via_light_green_line(sena_nikhom, kasetsart_university, 600).
+distance(sena_nikhom, ratchayothin, 700).
+distance(sena_nikhom, kasetsart_university, 600).
 
-to_via_light_green_line(kasetsart_university, sena_nikhom, 600).
-to_via_light_green_line(kasetsart_university, royal_forest_department, 850).
+distance(kasetsart_university, sena_nikhom, 600).
+distance(kasetsart_university, royal_forest_department, 850).
 
-to_via_light_green_line(royal_forest_department, kasetsart_university, 850).
-to_via_light_green_line(royal_forest_department, bang_bua, 550).
+distance(royal_forest_department, kasetsart_university, 850).
+distance(royal_forest_department, bang_bua, 550).
 
-to_via_light_green_line(bang_bua, royal_forest_department, 550).
-to_via_light_green_line(bang_bua, 11th_infantry_regiment, 1400).
+distance(bang_bua, royal_forest_department, 550).
+distance(bang_bua, 11th_infantry_regiment, 1400).
 
-to_via_light_green_line(11th_infantry_regiment, bang_bua, 1400).
-to_via_light_green_line(11th_infantry_regiment, wat_phra_sri_mahathat, 900).
+distance(11th_infantry_regiment, bang_bua, 1400).
+distance(11th_infantry_regiment, wat_phra_sri_mahathat, 900).
 
-to_via_light_green_line(wat_phra_sri_mahathat, 11th_infantry_regiment, 900).
-to_via_light_green_line(wat_phra_sri_mahathat, phahon_yothin59, 1000).
+distance(wat_phra_sri_mahathat, 11th_infantry_regiment, 900).
+distance(wat_phra_sri_mahathat, phahon_yothin59, 1000).
 
-to_via_light_green_line(phahon_yothin59, wat_phra_sri_mahathat, 1000).
-to_via_light_green_line(phahon_yothin59, sai_yud, 700).
+distance(phahon_yothin59, wat_phra_sri_mahathat, 1000).
+distance(phahon_yothin59, sai_yud, 700).
 
-to_via_light_green_line(sai_yud, phahon_yothin59, 700).
-to_via_light_green_line(sai_yud, saphan_mai, 950).
+distance(sai_yud, phahon_yothin59, 700).
+distance(sai_yud, saphan_mai, 950).
 
-to_via_light_green_line(saphan_mai, sai_yud, 950).
-to_via_light_green_line(saphan_mai, bhumibol_adulyadej_hospital, 1900).
+distance(saphan_mai, sai_yud, 950).
+distance(saphan_mai, bhumibol_adulyadej_hospital, 1900).
 
-to_via_light_green_line(bhumibol_adulyadej_hospital, saphan_mai, 1900).
-to_via_light_green_line(bhumibol_adulyadej_hospital, royal_thai_air_force_museum, 2800).
+distance(bhumibol_adulyadej_hospital, saphan_mai, 1900).
+distance(bhumibol_adulyadej_hospital, royal_thai_air_force_museum, 2800).
 
-to_via_light_green_line(royal_thai_air_force_museum, bhumibol_adulyadej_hospital, 2800).
-to_via_light_green_line(royal_thai_air_force_museum, yaek_kor_por_aor, 950).
+distance(royal_thai_air_force_museum, bhumibol_adulyadej_hospital, 2800).
+distance(royal_thai_air_force_museum, yaek_kor_por_aor, 950).
 
-to_via_light_green_line(yaek_kor_por_aor, royal_thai_air_force_museum, 950).
-to_via_light_green_line(yaek_kor_por_aor, khu_khot, 2400).
+distance(yaek_kor_por_aor, royal_thai_air_force_museum, 950).
+distance(yaek_kor_por_aor, khu_khot, 2400).
 
-to_via_light_green_line(khu_khot, yaek_kor_por_aor, 2400).
+distance(khu_khot, yaek_kor_por_aor, 2400).
 
 
 % MRT
@@ -409,328 +412,326 @@ has_code(setthabutbamphen, pk28).
 has_code(min_buri_market, pk29).
 has_code(min_buri, pk30).
 
-% distance between station in pink line
-to_via_pink_line(nonthaburi_civic_center, khae_rai, 1100).
-
-to_via_pink_line(khae_rai, nonthaburi_civic_center, 1100).
-to_via_pink_line(khae_rai, sanambin_nam, 1400).
-
-to_via_pink_line(sanambin_nam, khae_rai, 1400).
-to_via_pink_line(sanambin_nam, samakkhi, 1700).
-
-to_via_pink_line(samakkhi, sanambin_nam, 1700).
-to_via_pink_line(samakkhi, royal_irrigation_department, 1100).
-
-to_via_pink_line(royal_irrigation_department, samakkhi, 1100).
-to_via_pink_line(royal_irrigation_department, yaek_pak_kret, 950).
-
-to_via_pink_line(yaek_pak_kret, royal_irrigation_department, 950).
-to_via_pink_line(yaek_pak_kret, pak_kret_bypass, 1200).
-
-to_via_pink_line(pak_kret_bypass, yaek_pak_kret, 1200).
-to_via_pink_line(pak_kret_bypass, chaeng_watthana_pak_kret28, 1500).
-
-to_via_pink_line(chaeng_watthana_pak_kret28, pak_kret_bypass, 1500).
-to_via_pink_line(chaeng_watthana_pak_kret28, si_rat, 1300).
-
-to_via_pink_line(si_rat, chaeng_watthana_pak_kret28, 1300).
-to_via_pink_line(si_rat, muang_thong_thani, 1400).
-
-to_via_pink_line(muang_thong_thani, si_rat, 1400).
-to_via_pink_line(muang_thong_thani, chaeng_watthana14, 1400).
-
-to_via_pink_line(chaeng_watthana14, muang_thong_thani, 1400).
-to_via_pink_line(chaeng_watthana14, government_complex, 800).
-
-to_via_pink_line(government_complex, chaeng_watthana14, 800).
-to_via_pink_line(government_complex, national_telecom, 1600).
-
-to_via_pink_line(national_telecom, government_complex, 1600).
-to_via_pink_line(national_telecom, lak_si, 1100).
-
-to_via_pink_line(lak_si, national_telecom, 1100).
-to_via_pink_line(lak_si, rajabhat_phranakhon, 950).
-
-to_via_pink_line(rajabhat_phranakhon, lak_si, 950).
-to_via_pink_line(rajabhat_phranakhon, wat_phra_sri_mahathat, 2300).
-
-to_via_pink_line(wat_phra_sri_mahathat, rajabhat_phranakhon, 2300).
-to_via_pink_line(wat_phra_sri_mahathat, ram_inthra3, 850).
-
-to_via_pink_line(ram_inthra3, wat_phra_sri_mahathat, 850).
-to_via_pink_line(ram_inthra3, lat_pla_khao, 1900).
-
-to_via_pink_line(lat_pla_khao, ram_inthra3, 1900).
-to_via_pink_line(lat_pla_khao, ram_inthra_kor_mor4, 1000).
-
-to_via_pink_line(ram_inthra_kor_mor4, lat_pla_khao, 1000).
-to_via_pink_line(ram_inthra_kor_mor4, maiyalap, 750).
-
-to_via_pink_line(maiyalap, ram_inthra_kor_mor4, 750).
-to_via_pink_line(maiyalap, vacharaphol, 1500).
-
-to_via_pink_line(vacharaphol, maiyalap, 1500).
-to_via_pink_line(vacharaphol, ram_inthra_kor_mor6, 850).
-
-to_via_pink_line(ram_inthra_kor_mor6, vacharaphol, 850).
-to_via_pink_line(ram_inthra_kor_mor6, khu_bon, 1000).
-
-to_via_pink_line(khu_bon, ram_inthra_kor_mor6, 1000).
-to_via_pink_line(khu_bon, ram_inthra_kor_mor9, 1200).
-
-to_via_pink_line(ram_inthra_kor_mor9, khu_bon, 1200).
-to_via_pink_line(ram_inthra_kor_mor9, outer_ring_road_ram_inthra, 1700).
-
-to_via_pink_line(outer_ring_road_ram_inthra, ram_inthra_kor_mor9, 1700).
-to_via_pink_line(outer_ring_road_ram_inthra, nopparat, 1300).
-
-to_via_pink_line(nopparat, outer_ring_road_ram_inthra, 1300).
-to_via_pink_line(nopparat, bang_chan, 2000).
-
-to_via_pink_line(bang_chan, nopparat, 2000).
-to_via_pink_line(bang_chan, setthabutbamphen, 1100).
-
-to_via_pink_line(setthabutbamphen, bang_chan, 1100).
-to_via_pink_line(setthabutbamphen, min_buri_market, 1400).
-
-to_via_pink_line(min_buri_market, setthabutbamphen, 1400).
-to_via_pink_line(min_buri_market, min_buri, 1000).
-
-to_via_pink_line(min_buri, min_buri_market, 1000).
-
 % distance between station in purple line
-to_via_purple_line(khlog_bang_phai,talad_bang_yai,1000).
+distance(khlog_bang_phai,talad_bang_yai,1000).
 
-to_via_purple_line(talad_bang_yai,khlog_bang_phai,1000).
-to_via_purple_line(talad_bang_yai,sam_yaek_bang_yai,1700).
+distance(talad_bang_yai,khlog_bang_phai,1000).
+distance(talad_bang_yai,sam_yaek_bang_yai,1700).
 
-to_via_purple_line(sam_yaek_bang_yai,talad_bang_yai,1700).
-to_via_purple_line(sam_yaek_bang_yai,bang_phlu,1200).
+distance(sam_yaek_bang_yai,talad_bang_yai,1700).
+distance(sam_yaek_bang_yai,bang_phlu,1200).
 
-to_via_purple_line(bang_phlu,sam_yaek_bang_yai,1200).
-to_via_purple_line(bang_phlu,bang_rak_yai,900).
+distance(bang_phlu,sam_yaek_bang_yai,1200).
+distance(bang_phlu,bang_rak_yai,900).
 
-to_via_purple_line(bang_rak_yai,bang_phlu,900).
-to_via_purple_line(bang_rak_yai,bang_rak_noi_tha_it,1000).
+distance(bang_rak_yai,bang_phlu,900).
+distance(bang_rak_yai,bang_rak_noi_tha_it,1000).
 
-to_via_purple_line(bang_rak_noi_tha_it,bang_rak_yai,1000).
-to_via_purple_line(bang_rak_noi_tha_it,sai_ma,1000).
+distance(bang_rak_noi_tha_it,bang_rak_yai,1000).
+distance(bang_rak_noi_tha_it,sai_ma,1000).
 
-to_via_purple_line(sai_ma,bang_rak_noi_tha_it,1000).
-to_via_purple_line(sai_ma,phra_nang_klao_bridge,1500).
+distance(sai_ma,bang_rak_noi_tha_it,1000).
+distance(sai_ma,phra_nang_klao_bridge,1500).
 
-to_via_purple_line(phra_nang_klao_bridge,sai_ma,1500).
-to_via_purple_line(phra_nang_klao_bridge,yaek_nonthaburi1,1800).
+distance(phra_nang_klao_bridge,sai_ma,1500).
+distance(phra_nang_klao_bridge,yaek_nonthaburi1,1800).
 
-to_via_purple_line(yaek_nonthaburi1,phra_nang_klao_bridge,1800).
-to_via_purple_line(yaek_nonthaburi1,bang_krasor,1000).
+distance(yaek_nonthaburi1,phra_nang_klao_bridge,1800).
+distance(yaek_nonthaburi1,bang_krasor,1000).
 
-to_via_purple_line(bang_krasor,yaek_nonthaburi1,1000).
-to_via_purple_line(bang_krasor,nonthaburi_civic_center,650).
+distance(bang_krasor,yaek_nonthaburi1,1000).
+distance(bang_krasor,nonthaburi_civic_center,650).
 
-to_via_purple_line(nonthaburi_civic_center,bang_krasor,650).
-to_via_purple_line(nonthaburi_civic_center,ministry_of_public_health,2200).
+distance(nonthaburi_civic_center,bang_krasor,650).
+distance(nonthaburi_civic_center,ministry_of_public_health,2200).
 
-to_via_purple_line(ministry_of_public_health,nonthaburi_civic_center,2200).
-to_via_purple_line(ministry_of_public_health,yaek_tiwanon,1300).
+distance(ministry_of_public_health,nonthaburi_civic_center,2200).
+distance(ministry_of_public_health,yaek_tiwanon,1300).
 
-to_via_purple_line(yaek_tiwanon,ministry_of_public_health,1300).
-to_via_purple_line(yaek_tiwanon,wong_sawang,1500).
+distance(yaek_tiwanon,ministry_of_public_health,1300).
+distance(yaek_tiwanon,wong_sawang,1500).
 
-to_via_purple_line(wong_sawang,yaek_tiwanon,1500).
-to_via_purple_line(wong_sawang,bang_son,1500).
+distance(wong_sawang,yaek_tiwanon,1500).
+distance(wong_sawang,bang_son,1500).
 
-to_via_purple_line(bang_son,wong_sawang,1500).
-to_via_purple_line(bang_son,tao_poon,1400).
+distance(bang_son,wong_sawang,1500).
+distance(bang_son,tao_poon,1400).
 
-to_via_purple_line(tao_poon,bang_son,1400).
+distance(tao_poon,bang_son,1400).
 
 % distance between station in blue line (left side)
 
-to_via_blue_line(tao_poon,bang_pho,1000).
-to_via_blue_line(bang_pho,tao_poon,1000).
-to_via_blue_line(bang_pho,bang_o,2030).
+distance(tao_poon,bang_pho,1000).
+distance(bang_pho,tao_poon,1000).
+distance(bang_pho,bang_o,2030).
 
-to_via_blue_line(bang_o,bang_pho,2030).
-to_via_blue_line(bang_o,bang_phlat,800).
+distance(bang_o,bang_pho,2030).
+distance(bang_o,bang_phlat,800).
 
-to_via_blue_line(bang_phlat,bang_o,800).
-to_via_blue_line(bang_phlat,sirindhorn,1500).
+distance(bang_phlat,bang_o,800).
+distance(bang_phlat,sirindhorn,1500).
 
-to_via_blue_line(sirindhorn,bang_phlat,1500).
-to_via_blue_line(sirindhorn,bang_yi_khan,1000).
+distance(sirindhorn,bang_phlat,1500).
+distance(sirindhorn,bang_yi_khan,1000).
 
-to_via_blue_line(bang_yi_khan,sirindhorn,1000).
-to_via_blue_line(bang_yi_khan,bang_khun_non,1800).
+distance(bang_yi_khan,sirindhorn,1000).
+distance(bang_yi_khan,bang_khun_non,1800).
 
-to_via_blue_line(bang_khun_non,bang_yi_khan,1800).
-to_via_blue_line(bang_khun_non,fai_chai,1200).
+distance(bang_khun_non,bang_yi_khan,1800).
+distance(bang_khun_non,fai_chai,1200).
 
-to_via_blue_line(fai_chai,bang_khun_non,1200).
-to_via_blue_line(fai_chai,charan13,1800).
+distance(fai_chai,bang_khun_non,1200).
+distance(fai_chai,charan13,1800).
 
-to_via_blue_line(charan13,fai_chai,1800).
-to_via_blue_line(charan13,tha_phra,1200).
+distance(charan13,fai_chai,1800).
+distance(charan13,tha_phra,1200).
 
-to_via_blue_line(tha_phra,charan13,1200).
-to_via_blue_line(tha_phra,bang_phai,1200).
-to_via_blue_line(tha_phra,itsaraphap,2000).
+distance(tha_phra,charan13,1200).
+distance(tha_phra,bang_phai,1200).
+distance(tha_phra,itsaraphap,2000).
 
-to_via_blue_line(bang_phai,tha_phra,1200).
-to_via_blue_line(bang_phai,bang_wa,1100).
+distance(bang_phai,tha_phra,1200).
+distance(bang_phai,bang_wa,1100).
 
-to_via_blue_line(bang_wa,bang_phai,1100).
-to_via_blue_line(bang_wa,phetkasem48,1300).
+distance(bang_wa,bang_phai,1100).
+distance(bang_wa,phetkasem48,1300).
 
-to_via_blue_line(phetkasem48,bang_wa,1300).
-to_via_blue_line(phetkasem48,phasi_charoen,1200).
+distance(phetkasem48,bang_wa,1300).
+distance(phetkasem48,phasi_charoen,1200).
 
-to_via_blue_line(phasi_charoen,phetkasem48,1200).
-to_via_blue_line(phasi_charoen,bang_khae,1300).
+distance(phasi_charoen,phetkasem48,1200).
+distance(phasi_charoen,bang_khae,1300).
 
-to_via_blue_line(bang_khae,phasi_charoen,1300).
-to_via_blue_line(bang_khae,lak_song,1400).
+distance(bang_khae,phasi_charoen,1300).
+distance(bang_khae,lak_song,1400).
 
-to_via_blue_line(lak_song,bang_khae).
+distance(lak_song,bang_khae).
 
 % distance between station in blue line (right side)
 
-to_via_blue_line(tao_poon,bang_sue,900).
-to_via_blue_line(bang_sue,tao_poon,900).
-to_via_blue_line(bang_sue,kamphaeng_phet,1300).
+distance(tao_poon,bang_sue,900).
+distance(bang_sue,tao_poon,900).
+distance(bang_sue,kamphaeng_phet,1300).
 
-to_via_blue_line(kamphaeng_phet,bang_sue,1300).
-to_via_blue_line(kamphaeng_phet,chatuchak_park,1300).
+distance(kamphaeng_phet,bang_sue,1300).
+distance(kamphaeng_phet,chatuchak_park,1300).
 
-to_via_blue_line(chatuchak_park,kamphaeng_phet,1300).
-to_via_blue_line(chatuchak_park,phahon_yothin,1400).
+distance(chatuchak_park,kamphaeng_phet,1300).
+distance(chatuchak_park,phahon_yothin,1400).
 
-to_via_blue_line(phahon_yothin,chatuchak_park,1400).
-to_via_blue_line(phahon_yothin,lat_phrao,1200).
+distance(phahon_yothin,chatuchak_park,1400).
+distance(phahon_yothin,lat_phrao,1200).
 
-to_via_blue_line(lat_phrao,phahon_yothin,1200).
-to_via_blue_line(lat_phrao,ratchadaphisek,850).
+distance(lat_phrao,phahon_yothin,1200).
+distance(lat_phrao,ratchadaphisek,850).
 
-to_via_blue_line(ratchadaphisek,lat_phrao,850).
-to_via_blue_line(ratchadaphisek,sutthisan,900).
+distance(ratchadaphisek,lat_phrao,850).
+distance(ratchadaphisek,sutthisan,900).
 
-to_via_blue_line(sutthisan,ratchadaphisek,900).
-to_via_blue_line(sutthisan,huai_khwang,1100).
+distance(sutthisan,ratchadaphisek,900).
+distance(sutthisan,huai_khwang,1100).
 
-to_via_blue_line(huai_khwang,sutthisan,1100).
-to_via_blue_line(huai_khwang,thailand_cultural_centre,1200).
+distance(huai_khwang,sutthisan,1100).
+distance(huai_khwang,thailand_cultural_centre,1200).
 
-to_via_blue_line(thailand_cultural_centre,huai_khwang,1200).
-to_via_blue_line(thailand_cultural_centre,phra_ram9,900).
+distance(thailand_cultural_centre,huai_khwang,1200).
+distance(thailand_cultural_centre,phra_ram9,900).
 
-to_via_blue_line(phra_ram9,thailand_cultural_centre,900).
-to_via_blue_line(phra_ram9,phetchaburi,1000).
+distance(phra_ram9,thailand_cultural_centre,900).
+distance(phra_ram9,phetchaburi,1000).
 
-to_via_blue_line(phetchaburi,phra_ram9,1000).
-to_via_blue_line(phetchaburi,sukhumvit,1100).
+distance(phetchaburi,phra_ram9,1000).
+distance(phetchaburi,sukhumvit,1100).
 
-to_via_blue_line(sukhumvit,phetchaburi,1100).
-to_via_blue_line(sukhumvit,queen_sirikit_national_covention_centre,1700).
+distance(sukhumvit,phetchaburi,1100).
+distance(sukhumvit,queen_sirikit_national_covention_centre,1700).
 
-to_via_blue_line(queen_sirikit_national_covention_centre,sukhumvit,1700).
-to_via_blue_line(queen_sirikit_national_covention_centre,khlog_toei,750).
+distance(queen_sirikit_national_covention_centre,sukhumvit,1700).
+distance(queen_sirikit_national_covention_centre,khlog_toei,750).
 
-to_via_blue_line(khlog_toei,queen_sirikit_national_covention_centre,750).
-to_via_blue_line(khlog_toei,lumphini,850).
+distance(khlog_toei,queen_sirikit_national_covention_centre,750).
+distance(khlog_toei,lumphini,850).
 
-to_via_blue_line(lumphini,khlog_toei,850).
-to_via_blue_line(lumphini,si_lom,950).
+distance(lumphini,khlog_toei,850).
+distance(lumphini,si_lom,950).
 
-to_via_blue_line(si_lom,lumphini,950).
-to_via_blue_line(si_lom,sam_yan,850).
+distance(si_lom,lumphini,950).
+distance(si_lom,sam_yan,850).
 
-to_via_blue_line(sam_yan,si_lom,850).
-to_via_blue_line(sam_yan,hua_lamphong,1500).
+distance(sam_yan,si_lom,850).
+distance(sam_yan,hua_lamphong,1500).
 
-to_via_blue_line(hua_lamphong,sam_yan,1500).
-to_via_blue_line(hua_lamphong,wat_mangkon,850).
+distance(hua_lamphong,sam_yan,1500).
+distance(hua_lamphong,wat_mangkon,850).
 
-to_via_blue_line(wat_mangkon,hua_lamphong,850).
-to_via_blue_line(wat_mangkon,sam_yot,1000).
+distance(wat_mangkon,hua_lamphong,850).
+distance(wat_mangkon,sam_yot,1000).
 
-to_via_blue_line(sam_yot,wat_mangkon,1000).
-to_via_blue_line(sam_yot,sanam_chai,850).
+distance(sam_yot,wat_mangkon,1000).
+distance(sam_yot,sanam_chai,850).
 
-to_via_blue_line(sanam_chai,sam_yot,850).
-to_via_blue_line(sanam_chai,itsaraphap,1300).
+distance(sanam_chai,sam_yot,850).
+distance(sanam_chai,itsaraphap,1300).
 
-to_via_blue_line(itsaraphap,sanam_chai,1300).
-to_via_blue_line(itsaraphap,tha_phra,2000).
-
+distance(itsaraphap,sanam_chai,1300).
+distance(itsaraphap,tha_phra,2000).
 
 % distance between station in yellow line
-to_via_yellow_line(lat_phrao, phawana, 1500).
+distance(lat_phrao, phawana, 1500).
 
-to_via_yellow_line(phawana, lat_phrao, 1500).
-to_via_yellow_line(phawana, chok_chai4, 1500).
+distance(phawana, lat_phrao, 1500).
+distance(phawana, chok_chai4, 1500).
 
-to_via_yellow_line(chok_chai4, phawana, 1500).
-to_via_yellow_line(chok_chai4, lat_phrao71, 1700).
+distance(chok_chai4, phawana, 1500).
+distance(chok_chai4, lat_phrao71, 1700).
 
-to_via_yellow_line(lat_phrao71, chok_chai4, 1700).
-to_via_yellow_line(lat_phrao71, lat_phrao83, 800).
+distance(lat_phrao71, chok_chai4, 1700).
+distance(lat_phrao71, lat_phrao83, 800).
 
-to_via_yellow_line(lat_phrao83, lat_phrao71, 800).
-to_via_yellow_line(lat_phrao83, mahat_thai, 1200).
+distance(lat_phrao83, lat_phrao71, 800).
+distance(lat_phrao83, mahat_thai, 1200).
 
-to_via_yellow_line(mahat_thai, lat_phrao83, 1200).
-to_via_yellow_line(mahat_thai, lat_phrao101, 900).
+distance(mahat_thai, lat_phrao83, 1200).
+distance(mahat_thai, lat_phrao101, 900).
 
-to_via_yellow_line(lat_phrao101, mahat_thai, 900).
-to_via_yellow_line(lat_phrao101, bang_kapi, 1200).
+distance(lat_phrao101, mahat_thai, 900).
+distance(lat_phrao101, bang_kapi, 1200).
 
-to_via_yellow_line(bang_kapi, lat_phrao101, 1200).
-to_via_yellow_line(bang_kapi, yaek_lam_sali, 1200).
+distance(bang_kapi, lat_phrao101, 1200).
+distance(bang_kapi, yaek_lam_sali, 1200).
 
-to_via_yellow_line(yaek_lam_sali, bang_kapi, 1200).
-to_via_yellow_line(yaek_lam_sali, si_kritha, 1300).
+distance(yaek_lam_sali, bang_kapi, 1200).
+distance(yaek_lam_sali, si_kritha, 1300).
 
-to_via_yellow_line(si_kritha, yaek_lam_sali, 1300).
-to_via_yellow_line(si_kritha, hua_mak, 1700).
+distance(si_kritha, yaek_lam_sali, 1300).
+distance(si_kritha, hua_mak, 1700).
 
-to_via_yellow_line(hua_mak, si_kritha, 1700).
-to_via_yellow_line(hua_mak, kalantan, 1400).
+distance(hua_mak, si_kritha, 1700).
+distance(hua_mak, kalantan, 1400).
 
-to_via_yellow_line(kalantan, hua_mak, 1400).
-to_via_yellow_line(kalantan, si_nut, 1700).
+distance(kalantan, hua_mak, 1400).
+distance(kalantan, si_nut, 1700).
 
-to_via_yellow_line(si_nut, kalantan, 1700).
-to_via_yellow_line(si_nut, srinagarindra38, 1300).
+distance(si_nut, kalantan, 1700).
+distance(si_nut, srinagarindra38, 1300).
 
-to_via_yellow_line(srinagarindra38, si_nut, 1300).
-to_via_yellow_line(srinagarindra38, suan_luang_rama9, 1100).
+distance(srinagarindra38, si_nut, 1300).
+distance(srinagarindra38, suan_luang_rama9, 1100).
 
-to_via_yellow_line(suan_luang_rama9, srinagarindra38, 1100).
-to_via_yellow_line(suan_luang_rama9, si_udom, 1500).
+distance(suan_luang_rama9, srinagarindra38, 1100).
+distance(suan_luang_rama9, si_udom, 1500).
 
-to_via_yellow_line(si_udom, suan_luang_rama9, 1500).
-to_via_yellow_line(si_udom, si_iam, 2100).
+distance(si_udom, suan_luang_rama9, 1500).
+distance(si_udom, si_iam, 2100).
 
-to_via_yellow_line(si_iam, si_udom, 2100).
-to_via_yellow_line(si_iam, si_la_salle, 3600).
+distance(si_iam, si_udom, 2100).
+distance(si_iam, si_la_salle, 3600).
 
-to_via_yellow_line(si_la_salle, si_iam, 3600).
-to_via_yellow_line(si_la_salle, si_bearing, 1400).
+distance(si_la_salle, si_iam, 3600).
+distance(si_la_salle, si_bearing, 1400).
 
-to_via_yellow_line(si_bearing, si_la_salle, 1400).
-to_via_yellow_line(si_bearing, si_dan, 1600).
+distance(si_bearing, si_la_salle, 1400).
+distance(si_bearing, si_dan, 1600).
 
-to_via_yellow_line(si_dan, si_bearing, 1600).
-to_via_yellow_line(si_dan, si_thepha, 900).
+distance(si_dan, si_bearing, 1600).
+distance(si_dan, si_thepha, 900).
 
-to_via_yellow_line(si_thepha, si_dan, 900).
-to_via_yellow_line(si_thepha, thipphawan, 2200).
+distance(si_thepha, si_dan, 900).
+distance(si_thepha, thipphawan, 2200).
 
-to_via_yellow_line(thipphawan, si_thepha, 2200).
-to_via_yellow_line(thipphawan, samrong, 1800).
+distance(thipphawan, si_thepha, 2200).
+distance(thipphawan, samrong, 1800).
 
-to_via_yellow_line(samrong, thipphawan, 1800).
+distance(samrong, thipphawan, 1800).
 
+% distance between station in pink line
+distance(nonthaburi_civic_center, khae_rai, 1100).
+
+distance(khae_rai, nonthaburi_civic_center, 1100).
+distance(khae_rai, sanambin_nam, 1400).
+
+distance(sanambin_nam, khae_rai, 1400).
+distance(sanambin_nam, samakkhi, 1700).
+
+distance(samakkhi, sanambin_nam, 1700).
+distance(samakkhi, royal_irrigation_department, 1100).
+
+distance(royal_irrigation_department, samakkhi, 1100).
+distance(royal_irrigation_department, yaek_pak_kret, 950).
+
+distance(yaek_pak_kret, royal_irrigation_department, 950).
+distance(yaek_pak_kret, pak_kret_bypass, 1200).
+
+distance(pak_kret_bypass, yaek_pak_kret, 1200).
+distance(pak_kret_bypass, chaeng_watthana_pak_kret28, 1500).
+
+distance(chaeng_watthana_pak_kret28, pak_kret_bypass, 1500).
+distance(chaeng_watthana_pak_kret28, si_rat, 1300).
+
+distance(si_rat, chaeng_watthana_pak_kret28, 1300).
+distance(si_rat, muang_thong_thani, 1400).
+
+distance(muang_thong_thani, si_rat, 1400).
+distance(muang_thong_thani, chaeng_watthana14, 1400).
+
+distance(chaeng_watthana14, muang_thong_thani, 1400).
+distance(chaeng_watthana14, government_complex, 800).
+
+distance(government_complex, chaeng_watthana14, 800).
+distance(government_complex, national_telecom, 1600).
+
+distance(national_telecom, government_complex, 1600).
+distance(national_telecom, lak_si, 1100).
+
+distance(lak_si, national_telecom, 1100).
+distance(lak_si, rajabhat_phranakhon, 950).
+
+distance(rajabhat_phranakhon, lak_si, 950).
+distance(rajabhat_phranakhon, wat_phra_sri_mahathat, 2300).
+
+distance(wat_phra_sri_mahathat, rajabhat_phranakhon, 2300).
+distance(wat_phra_sri_mahathat, ram_inthra3, 850).
+
+distance(ram_inthra3, wat_phra_sri_mahathat, 850).
+distance(ram_inthra3, lat_pla_khao, 1900).
+
+distance(lat_pla_khao, ram_inthra3, 1900).
+distance(lat_pla_khao, ram_inthra_kor_mor4, 1000).
+
+distance(ram_inthra_kor_mor4, lat_pla_khao, 1000).
+distance(ram_inthra_kor_mor4, maiyalap, 750).
+
+distance(maiyalap, ram_inthra_kor_mor4, 750).
+distance(maiyalap, vacharaphol, 1500).
+
+distance(vacharaphol, maiyalap, 1500).
+distance(vacharaphol, ram_inthra_kor_mor6, 850).
+
+distance(ram_inthra_kor_mor6, vacharaphol, 850).
+distance(ram_inthra_kor_mor6, khu_bon, 1000).
+
+distance(khu_bon, ram_inthra_kor_mor6, 1000).
+distance(khu_bon, ram_inthra_kor_mor9, 1200).
+
+distance(ram_inthra_kor_mor9, khu_bon, 1200).
+distance(ram_inthra_kor_mor9, outer_ring_road_ram_inthra, 1700).
+
+distance(outer_ring_road_ram_inthra, ram_inthra_kor_mor9, 1700).
+distance(outer_ring_road_ram_inthra, nopparat, 1300).
+
+distance(nopparat, outer_ring_road_ram_inthra, 1300).
+distance(nopparat, bang_chan, 2000).
+
+distance(bang_chan, nopparat, 2000).
+distance(bang_chan, setthabutbamphen, 1100).
+
+distance(setthabutbamphen, bang_chan, 1100).
+distance(setthabutbamphen, min_buri_market, 1400).
+
+distance(min_buri_market, setthabutbamphen, 1400).
+distance(min_buri_market, min_buri, 1000).
+
+distance(min_buri, min_buri_market, 1000).
 
 % SRTET
 % station has code XXXX
@@ -753,41 +754,41 @@ hascode(lak_hok, rn09).
 hascode(rangsit, rn10).
 
 % distance between station in red line (dark red line)
-to_via_red_line(krung_thep_apiwat, bang_son, 4400).
+distance(krung_thep_apiwat, bang_son, 4400).
 
-to_via_red_line(bang_son, krung_thep_apiwat, 4400).
-to_via_red_line(bang_son, bang_bamru, 7900).
+distance(bang_son, krung_thep_apiwat, 4400).
+distance(bang_son, bang_bamru, 7900).
 
-to_via_red_line(bang_bamru, bang_son, 7900).
-to_via_red_line(bang_bamru, talingchan, 4600).
+distance(bang_bamru, bang_son, 7900).
+distance(bang_bamru, talingchan, 4600).
 
-to_via_red_line(talingchan, bang_bamru, 4600).
+distance(talingchan, bang_bamru, 4600).
 
 % distance between station in red line (light red line)
-to_via_red_line(krung_thep_apiwat, chatuchak, 2700).
+distance(krung_thep_apiwat, chatuchak, 2700).
 
-to_via_red_line(chatuchak, krung_thep_apiwat, 2700).
-to_via_red_line(chatuchak, wat_samian_nari, 1800).
+distance(chatuchak, krung_thep_apiwat, 2700).
+distance(chatuchak, wat_samian_nari, 1800).
 
-to_via_red_line(wat_samian_nari, chatuchak, 1800).
-to_via_red_line(wat_samian_nari, bang_khen, 800).
+distance(wat_samian_nari, chatuchak, 1800).
+distance(wat_samian_nari, bang_khen, 800).
 
-to_via_red_line(bang_khen, wat_samian_nari, 800).
-to_via_red_line(bang_khen, thung_song_hong, 1600).
+distance(bang_khen, wat_samian_nari, 800).
+distance(bang_khen, thung_song_hong, 1600).
 
-to_via_red_line(thung_song_hong, bang_khen, 1600).
-to_via_red_line(thung_song_hong, lak_si, 3000).
+distance(thung_song_hong, bang_khen, 1600).
+distance(thung_song_hong, lak_si, 3000).
 
-to_via_red_line(lak_si, thung_song_hong, 3000).
-to_via_red_line(lak_si, kan_kheha, 2500).
+distance(lak_si, thung_song_hong, 3000).
+distance(lak_si, kan_kheha, 2500).
 
-to_via_red_line(kan_kheha, lak_si, 2500).
-to_via_red_line(kan_kheha, don_mueang, 2400).
+distance(kan_kheha, lak_si, 2500).
+distance(kan_kheha, don_mueang, 2400).
 
-to_via_red_line(don_mueang, kan_kheha, 2400).
-to_via_red_line(don_mueang, lak_hok, 6400).
+distance(don_mueang, kan_kheha, 2400).
+distance(don_mueang, lak_hok, 6400).
 
-to_via_red_line(lak_hok, don_mueang, 6400).
-to_via_red_line(lak_hok, rangsit, 2800).
+distance(lak_hok, don_mueang, 6400).
+distance(lak_hok, rangsit, 2800).
 
-to_via_red_line(rangsit, lak_hok, 2800).
+distance(rangsit, lak_hok, 2800).

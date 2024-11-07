@@ -114,95 +114,6 @@ has_code(setthabutbamphen, pk28).
 has_code(min_buri_market, pk29).
 has_code(min_buri, pk30).
 
-% distance between station in pink line
-to_via_pink_line(nonthaburi_civic_center, khae_rai, 1100).
-
-to_via_pink_line(khae_rai, nonthaburi_civic_center, 1100).
-to_via_pink_line(khae_rai, sanambin_nam, 1400).
-
-to_via_pink_line(sanambin_nam, khae_rai, 1400).
-to_via_pink_line(sanambin_nam, samakkhi, 1700).
-
-to_via_pink_line(samakkhi, sanambin_nam, 1700).
-to_via_pink_line(samakkhi, royal_irrigation_department, 1100).
-
-to_via_pink_line(royal_irrigation_department, samakkhi, 1100).
-to_via_pink_line(royal_irrigation_department, yaek_pak_kret, 950).
-
-to_via_pink_line(yaek_pak_kret, royal_irrigation_department, 950).
-to_via_pink_line(yaek_pak_kret, pak_kret_bypass, 1200).
-
-to_via_pink_line(pak_kret_bypass, yaek_pak_kret, 1200).
-to_via_pink_line(pak_kret_bypass, chaeng_watthana_pak_kret28, 1500).
-
-to_via_pink_line(chaeng_watthana_pak_kret28, pak_kret_bypass, 1500).
-to_via_pink_line(chaeng_watthana_pak_kret28, si_rat, 1300).
-
-to_via_pink_line(si_rat, chaeng_watthana_pak_kret28, 1300).
-to_via_pink_line(si_rat, muang_thong_thani, 1400).
-
-to_via_pink_line(muang_thong_thani, si_rat, 1400).
-to_via_pink_line(muang_thong_thani, chaeng_watthana14, 1400).
-
-to_via_pink_line(chaeng_watthana14, muang_thong_thani, 1400).
-to_via_pink_line(chaeng_watthana14, government_complex, 800).
-
-to_via_pink_line(government_complex, chaeng_watthana14, 800).
-to_via_pink_line(government_complex, national_telecom, 1600).
-
-to_via_pink_line(national_telecom, government_complex, 1600).
-to_via_pink_line(national_telecom, lak_si, 1100).
-
-to_via_pink_line(lak_si, national_telecom, 1100).
-to_via_pink_line(lak_si, rajabhat_phranakhon, 950).
-
-to_via_pink_line(rajabhat_phranakhon, lak_si, 950).
-to_via_pink_line(rajabhat_phranakhon, wat_phra_sri_mahathat, 2300).
-
-to_via_pink_line(wat_phra_sri_mahathat, rajabhat_phranakhon, 2300).
-to_via_pink_line(wat_phra_sri_mahathat, ram_inthra3, 850).
-
-to_via_pink_line(ram_inthra3, wat_phra_sri_mahathat, 850).
-to_via_pink_line(ram_inthra3, lat_pla_khao, 1900).
-
-to_via_pink_line(lat_pla_khao, ram_inthra3, 1900).
-to_via_pink_line(lat_pla_khao, ram_inthra_kor_mor4, 1000).
-
-to_via_pink_line(ram_inthra_kor_mor4, lat_pla_khao, 1000).
-to_via_pink_line(ram_inthra_kor_mor4, maiyalap, 750).
-
-to_via_pink_line(maiyalap, ram_inthra_kor_mor4, 750).
-to_via_pink_line(maiyalap, vacharaphol, 1500).
-
-to_via_pink_line(vacharaphol, maiyalap, 1500).
-to_via_pink_line(vacharaphol, ram_inthra_kor_mor6, 850).
-
-to_via_pink_line(ram_inthra_kor_mor6, vacharaphol, 850).
-to_via_pink_line(ram_inthra_kor_mor6, khu_bon, 1000).
-
-to_via_pink_line(khu_bon, ram_inthra_kor_mor6, 1000).
-to_via_pink_line(khu_bon, ram_inthra_kor_mor9, 1200).
-
-to_via_pink_line(ram_inthra_kor_mor9, khu_bon, 1200).
-to_via_pink_line(ram_inthra_kor_mor9, outer_ring_road_ram_inthra, 1700).
-
-to_via_pink_line(outer_ring_road_ram_inthra, ram_inthra_kor_mor9, 1700).
-to_via_pink_line(outer_ring_road_ram_inthra, nopparat, 1300).
-
-to_via_pink_line(nopparat, outer_ring_road_ram_inthra, 1300).
-to_via_pink_line(nopparat, bang_chan, 2000).
-
-to_via_pink_line(bang_chan, nopparat, 2000).
-to_via_pink_line(bang_chan, setthabutbamphen, 1100).
-
-to_via_pink_line(setthabutbamphen, bang_chan, 1100).
-to_via_pink_line(setthabutbamphen, min_buri_market, 1400).
-
-to_via_pink_line(min_buri_market, setthabutbamphen, 1400).
-to_via_pink_line(min_buri_market, min_buri, 1000).
-
-to_via_pink_line(min_buri, min_buri_market, 1000).
-
 % distance between station in purple line
 to_via_purple_line(khlog_bang_phai,talad_bang_yai,1000).
 
@@ -435,3 +346,92 @@ to_via_yellow_line(thipphawan, si_thepha, 2200).
 to_via_yellow_line(thipphawan, samrong, 1800).
 
 to_via_yellow_line(samrong, thipphawan, 1800).
+
+% distance between station in pink line
+to_via_pink_line(nonthaburi_civic_center, khae_rai, 1100).
+
+to_via_pink_line(khae_rai, nonthaburi_civic_center, 1100).
+to_via_pink_line(khae_rai, sanambin_nam, 1400).
+
+to_via_pink_line(sanambin_nam, khae_rai, 1400).
+to_via_pink_line(sanambin_nam, samakkhi, 1700).
+
+to_via_pink_line(samakkhi, sanambin_nam, 1700).
+to_via_pink_line(samakkhi, royal_irrigation_department, 1100).
+
+to_via_pink_line(royal_irrigation_department, samakkhi, 1100).
+to_via_pink_line(royal_irrigation_department, yaek_pak_kret, 950).
+
+to_via_pink_line(yaek_pak_kret, royal_irrigation_department, 950).
+to_via_pink_line(yaek_pak_kret, pak_kret_bypass, 1200).
+
+to_via_pink_line(pak_kret_bypass, yaek_pak_kret, 1200).
+to_via_pink_line(pak_kret_bypass, chaeng_watthana_pak_kret28, 1500).
+
+to_via_pink_line(chaeng_watthana_pak_kret28, pak_kret_bypass, 1500).
+to_via_pink_line(chaeng_watthana_pak_kret28, si_rat, 1300).
+
+to_via_pink_line(si_rat, chaeng_watthana_pak_kret28, 1300).
+to_via_pink_line(si_rat, muang_thong_thani, 1400).
+
+to_via_pink_line(muang_thong_thani, si_rat, 1400).
+to_via_pink_line(muang_thong_thani, chaeng_watthana14, 1400).
+
+to_via_pink_line(chaeng_watthana14, muang_thong_thani, 1400).
+to_via_pink_line(chaeng_watthana14, government_complex, 800).
+
+to_via_pink_line(government_complex, chaeng_watthana14, 800).
+to_via_pink_line(government_complex, national_telecom, 1600).
+
+to_via_pink_line(national_telecom, government_complex, 1600).
+to_via_pink_line(national_telecom, lak_si, 1100).
+
+to_via_pink_line(lak_si, national_telecom, 1100).
+to_via_pink_line(lak_si, rajabhat_phranakhon, 950).
+
+to_via_pink_line(rajabhat_phranakhon, lak_si, 950).
+to_via_pink_line(rajabhat_phranakhon, wat_phra_sri_mahathat, 2300).
+
+to_via_pink_line(wat_phra_sri_mahathat, rajabhat_phranakhon, 2300).
+to_via_pink_line(wat_phra_sri_mahathat, ram_inthra3, 850).
+
+to_via_pink_line(ram_inthra3, wat_phra_sri_mahathat, 850).
+to_via_pink_line(ram_inthra3, lat_pla_khao, 1900).
+
+to_via_pink_line(lat_pla_khao, ram_inthra3, 1900).
+to_via_pink_line(lat_pla_khao, ram_inthra_kor_mor4, 1000).
+
+to_via_pink_line(ram_inthra_kor_mor4, lat_pla_khao, 1000).
+to_via_pink_line(ram_inthra_kor_mor4, maiyalap, 750).
+
+to_via_pink_line(maiyalap, ram_inthra_kor_mor4, 750).
+to_via_pink_line(maiyalap, vacharaphol, 1500).
+
+to_via_pink_line(vacharaphol, maiyalap, 1500).
+to_via_pink_line(vacharaphol, ram_inthra_kor_mor6, 850).
+
+to_via_pink_line(ram_inthra_kor_mor6, vacharaphol, 850).
+to_via_pink_line(ram_inthra_kor_mor6, khu_bon, 1000).
+
+to_via_pink_line(khu_bon, ram_inthra_kor_mor6, 1000).
+to_via_pink_line(khu_bon, ram_inthra_kor_mor9, 1200).
+
+to_via_pink_line(ram_inthra_kor_mor9, khu_bon, 1200).
+to_via_pink_line(ram_inthra_kor_mor9, outer_ring_road_ram_inthra, 1700).
+
+to_via_pink_line(outer_ring_road_ram_inthra, ram_inthra_kor_mor9, 1700).
+to_via_pink_line(outer_ring_road_ram_inthra, nopparat, 1300).
+
+to_via_pink_line(nopparat, outer_ring_road_ram_inthra, 1300).
+to_via_pink_line(nopparat, bang_chan, 2000).
+
+to_via_pink_line(bang_chan, nopparat, 2000).
+to_via_pink_line(bang_chan, setthabutbamphen, 1100).
+
+to_via_pink_line(setthabutbamphen, bang_chan, 1100).
+to_via_pink_line(setthabutbamphen, min_buri_market, 1400).
+
+to_via_pink_line(min_buri_market, setthabutbamphen, 1400).
+to_via_pink_line(min_buri_market, min_buri, 1000).
+
+to_via_pink_line(min_buri, min_buri_market, 1000).
