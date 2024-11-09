@@ -736,22 +736,22 @@ distance(min_buri, min_buri_market, 1000).
 % SRTET
 % station has code XXXX
 % dark red line
-hascode(krung_thep_apiwat, rw01).
-hascode(bang_son, rw02).
-hascode(bang_bamru, rw03).
-hascode(talingchan, rw04).
+has_code(krung_thep_apiwat, rw01).
+has_code(bang_son, rw02).
+has_code(bang_bamru, rw03).
+has_code(talingchan, rw04).
 
 % light red line
-hascode(krung_thep_apiwat, rn01).
-hascode(chatuchak, rn02).
-hascode(wat_samian_nari, rn03).
-hascode(bang_khen, rn04).
-hascode(thung_song_hong, rn05).
-hascode(lak_si, rn06).
-hascode(kan_kheha, rn07).
-hascode(don_mueang, rn08).
-hascode(lak_hok, rn09).
-hascode(rangsit, rn10).
+has_code(krung_thep_apiwat, rn01).
+has_code(chatuchak, rn02).
+has_code(wat_samian_nari, rn03).
+has_code(bang_khen, rn04).
+has_code(thung_song_hong, rn05).
+has_code(lak_si, rn06).
+has_code(kan_kheha, rn07).
+has_code(don_mueang, rn08).
+has_code(lak_hok, rn09).
+has_code(rangsit, rn10).
 
 % distance between station in red line (dark red line)
 distance(krung_thep_apiwat, bang_son, 4400).
@@ -792,3 +792,39 @@ distance(lak_hok, don_mueang, 6400).
 distance(lak_hok, rangsit, 2800).
 
 distance(rangsit, lak_hok, 2800).
+
+/*
+    =========================================
+    
+    INTERSECTIONS WITH DIFFERENT STATION NAME
+
+    =========================================
+*/
+
+% intersection green + blue
+has_code(phahon_yothin, n09).
+has_code(ha_yaek_lat_phrao, bl14).
+
+% intersection green + blue
+has_code(mo_chit, bl13).
+has_code(chatuchak_park, n08).
+
+% intersection green + blue
+has_code(sukhumvit, e04).
+has_code(asok, bl22).
+
+% intersection blue + light red + dark red
+has_code(krung_thep_apiwat, rw01).
+has_code(bang_sue, rw01).
+has_code(krung_thep_apiwat, rn01).
+has_code(bang_sue, rn01).
+has_code(krung_thep_apiwat, bl11).
+has_code(krung_thep_apiwat, bl11).
+
+% intersection APL + blue
+has_code(makkasan, bl21).
+has_code(phetchaburi,a06).
+
+% intersection dark green + blue
+has_code(sala_daeng, bl26).
+has_code(si_lom, s02).
