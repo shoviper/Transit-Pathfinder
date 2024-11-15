@@ -20,8 +20,13 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
     QWidget)
 import mainpic
 
+from all_station_dict import all_stations_dict
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        all_station_dict = list(all_stations_dict.values())
+        all_station_dict = self.convert_name(all_station_dict)
+        
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1080, 720)
@@ -70,6 +75,11 @@ class Ui_MainWindow(object):
         self.destcombobox = QComboBox(self.mainpage)
         self.destcombobox.setObjectName(u"destcombobox")
         self.destcombobox.setGeometry(QRect(190, 180, 250, 41))
+        self.destcombobox.addItems(all_station_dict)
+        # set color of combobox
+        self.destcombobox.setStyleSheet(u"background-color: #F4F4DB;\n"
+"color: #4d4d4d;\n"
+"font-size: 16px;")
         self.preferlabel = QLabel(self.mainpage)
         self.preferlabel.setObjectName(u"preferlabel")
         self.preferlabel.setGeometry(QRect(10, 280, 361, 21))
@@ -82,6 +92,16 @@ class Ui_MainWindow(object):
         self.destlabel.setStyleSheet(u"color: #000000; \n"
 "font-size: 20px;\n"
 "")
+        #swap button under destination combobox
+        self.swapbutton = QPushButton(self.mainpage)
+        self.swapbutton.setObjectName(u"swapbutton")
+        self.swapbutton.setGeometry(QRect(210, 240, 30, 30))
+        self.swapbutton.setStyleSheet(u"background-color: #e5d3b3;\n"
+"font-size: 22px;\n"
+"border: none;\n"
+"border-radius: 10px;")
+        self.swapbutton.setText("↔")
+        self.swapbutton.clicked.connect(self.swap_dest_and_start)
         self.timetakenradio = QRadioButton(self.mainpage)
         self.timetakenradio.setObjectName(u"timetakenradio")
         self.timetakenradio.setGeometry(QRect(30, 380, 121, 20))
@@ -122,6 +142,10 @@ class Ui_MainWindow(object):
         self.startcombobox = QComboBox(self.mainpage)
         self.startcombobox.setObjectName(u"startcombobox")
         self.startcombobox.setGeometry(QRect(190, 80, 250, 41))
+        self.startcombobox.addItems(all_station_dict)
+        self.startcombobox.setStyleSheet(u"background-color: #F4F4DB;\n"
+"color: #4d4d4d;\n"
+"font-size: 16px;")
         self.costradio = QRadioButton(self.mainpage)
         self.costradio.setObjectName(u"costradio")
         self.costradio.setGeometry(QRect(30, 430, 71, 20))
@@ -482,8 +506,19 @@ class Ui_MainWindow(object):
 
 
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
+    
+    def convert_name(self, station_list: list[str]):
+        station_list = [item.replace("_", " ").title()
+                        for item in station_list]
+        return station_list
 
+    def swap_dest_and_start(self):
+        dest = self.destcombobox.currentText()
+        start = self.startcombobox.currentText()
+        self.destcombobox.setCurrentText(start)
+        self.startcombobox.setCurrentText(dest)
+
+    # setupUi
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.mainlabel.setText(QCoreApplication.translate("MainWindow", u"TRANSIT PATHFINDER", None))
