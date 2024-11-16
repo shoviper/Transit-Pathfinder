@@ -248,6 +248,7 @@ else:
 
 # Query for cost
 print("\nCost")
+
 def count_stations_on_lines(path, lines):
     station_counts = {line: 0 for line in lines}
     
