@@ -204,3 +204,73 @@ all_stations_dict = {
     'rn09': 'lak_hok',
     'rn10': 'rangsit',
 }
+
+line = {
+    'dark_green' : ['w01', 'cen', 's01', 's02', 's03', 's04', 's05', 's06', 's07', 's08', 's09', 's10', 's11', 's12'],
+    'light_green' : ['cen', 'e01', 'e02', 'e03', 'e04', 'e05', 'e06', 'e07', 'e08', 'e09', 'e10', 'e11', 'e12', 'e13', 'e14', 'e15', 'e16', 'e17', 'e18', 'e19', 'e20', 'e21', 'e22', 'e23', 'n01', 'n02', 'n03', 'n04', 'n05', 'n07', 'n08', 'n09', 'n10', 'n11', 'n12', 'n13', 'n14', 'n15', 'n16', 'n17', 'n18', 'n19', 'n20', 'n21', 'n22', 'n23', 'n24'],
+    'gold' : ['g01', 'g02', 'g03'],
+    'blue' : ['bl01', 'bl02', 'bl03', 'bl04', 'bl05', 'bl06', 'bl07', 'bl08', 'bl09', 'bl10', 'bl11', 'bl12', 'bl13', 'bl14', 'bl15', 'bl16', 'bl17', 'bl18', 'bl19', 'bl20', 'bl21', 'bl22', 'bl23', 'bl24', 'bl25', 'bl26', 'bl27', 'bl28', 'bl29', 'bl30', 'bl31', 'bl32', 'bl33', 'bl34', 'bl35', 'bl36', 'bl37', 'bl38'],
+    'purple' : ['pp01', 'pp02', 'pp03', 'pp04', 'pp05', 'pp06', 'pp07', 'pp08', 'pp09', 'pp10', 'pp11', 'pp12', 'pp13', 'pp14', 'pp15', 'pp16'],
+    'yellow' : ['yl01', 'yl02', 'yl03', 'yl04', 'yl05', 'yl06', 'yl07', 'yl08', 'yl09', 'yl10', 'yl11', 'yl12', 'yl13', 'yl14', 'yl15', 'yl16', 'yl17', 'yl18', 'yl19', 'yl20', 'yl21', 'yl22', 'yl23'],
+    'pink' : ['pk01', 'pk02', 'pk03', 'pk04', 'pk05', 'pk06', 'pk07', 'pk08', 'pk09', 'pk10', 'pk11', 'pk12', 'pk13', 'pk14', 'pk15', 'pk16', 'pk17', 'pk18', 'pk19', 'pk20', 'pk21', 'pk22', 'pk23', 'pk24', 'pk25', 'pk26', 'pk27', 'pk28', 'pk29', 'pk30'],
+    'red' : ['rw01', 'rw02', 'rw03', 'rw04', 'rn01', 'rn02', 'rn03', 'rn04', 'rn05', 'rn06', 'rn07', 'rn08', 'rn09', 'rn10'],
+    'apl' : ['a08', 'a07', 'a06', 'a05', 'a04', 'a03', 'a02', 'a01']
+}
+
+
+# QUERY FROM PYTHON EXAMPLE
+from pyswip import Prolog
+
+prolog = Prolog()
+
+prolog.consult("newtrain.pl")
+if not prolog.query("true."):
+    print("Failed to load Prolog file")
+
+# Query shortest_path
+print("Shortest Path")
+path_trip = list(prolog.query('shortest_path("a07", "bl27", Path, Distance).'))
+if not path_trip:
+    print("false.")
+else:
+    for solution in path_trip:
+        path = [station.decode('utf-8') for station in solution['Path']]
+        distance = solution['Distance']
+        
+        print(f"Number of Stations: {len(path)}")
+        print(f"Path: {path}")
+        print(f"Distance: {distance}m")
+        time = ((distance / 1000) / 35) * 3600
+        hours = int(time // 3600)
+        minutes = int((time % 3600) // 60)
+        seconds = int(time % 60)
+        print(f"Estimated Time: ~{f"{hours:02}:{minutes:02}:{seconds:02}"}")
+
+# Query for cost
+print("\nCost")
+def count_stations_on_lines(path, lines):
+    station_counts = {line: 0 for line in lines}
+    
+    for station in path:
+        for line, stations in lines.items():
+            if station in stations:
+                station_counts[line] += 1
+                
+    station_counts = {line: count - 1 for line, count in station_counts.items() if count > 0}
+                
+    return station_counts
+
+stations = count_stations_on_lines(path, line)
+total_cost = 0
+
+for key, val in stations.items():
+    cost_query = list(prolog.query(f'cost({val}, Cost, "{key}")'))
+    if not cost_query:
+        print(f"No cost found for {key}.")
+    else:
+        for cost_solution in cost_query:
+            cost = int(cost_solution['Cost'])
+            print(f"{key} : ฿{cost}")
+            total_cost += cost  
+            
+print(f"Total : ฿{total_cost}")

@@ -1,3 +1,31 @@
+% Heuristic function (h): assuming straight-line distance is 0 for simplicity.
+heuristic(_, _, 0).
+
+% A* Algorithm
+shortest_path(Start, Goal, Path, Distance) :-
+    a_star([[Start, 0, 0, [Start]]], Goal, RevPath, Distance),
+    reverse(RevPath, Path). % Reverse the path to start from Start and end at Goal.
+
+% A* search core logic
+a_star([[Node, G, _, Path] | _], Goal, Path, G) :-
+    Node == Goal, !. % Goal found
+
+a_star([[Node, G, _, Path] | Rest], Goal, FinalPath, FinalDistance) :-
+    findall(
+        [NextNode, NewG, NewF, [NextNode | Path]],
+        (
+            connected(Node, NextNode, Distance),
+            \+ member(NextNode, Path), % Avoid cycles
+            NewG is G + Distance,
+            heuristic(NextNode, Goal, H),
+            NewF is NewG + H
+        ),
+        Neighbors
+    ),
+    append(Rest, Neighbors, OpenList),
+    sort(2, @=<, OpenList, SortedOpenList),
+    a_star(SortedOpenList, Goal, FinalPath, FinalDistance).
+
 /*
     =========================================
     
