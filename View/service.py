@@ -136,8 +136,8 @@ class PrologTransitSystem:
         return first_last_stations
 
 
-# transitSystem = PrologTransitSystem()
+transitSystem = PrologTransitSystem()
 # print(transitSystem.query_shortest_path("e01", "n03"))
-# path = transitSystem.query_shortest_path("e01", "bl27").get("path")
-# print(transitSystem.query_trip_details(path))
+path = transitSystem.query_shortest_path("e01", "n03").get("path")
+print(transitSystem.query_trip_details(path))
 # print(transitSystem.get_first_last_station_of_lines(path))
