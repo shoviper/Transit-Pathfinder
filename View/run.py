@@ -16,6 +16,8 @@ class MainPageWindow(QMainWindow, Ui_MainWindow):
         self.stackedWidget.setCurrentIndex(0)
         all_stations = list(all_stations_dict.values())
         all_stations = self.convert_name(station_list=all_stations)
+        #alphabet order
+        all_stations.sort()
         self.startcombobox.addItems(all_stations)
         self.destcombobox.addItems(all_stations)
         self.startcombobox.setStyleSheet(u"background-color: #F4F4DB;\n"
