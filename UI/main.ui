@@ -35,22 +35,6 @@ font-size: 36px;
      <string>TRANSIT PATHFINDER</string>
     </property>
    </widget>
-   <widget class="QLabel" name="mainpicture">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>90</y>
-      <width>581</width>
-      <height>581</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(:/mainpic/skytrainmap.jpeg);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
@@ -61,7 +45,7 @@ font-size: 36px;
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="mainpage">
      <widget class="QComboBox" name="destcombobox">
@@ -844,8 +828,30 @@ font-size: 18px;</string>
      </widget>
     </widget>
    </widget>
+   <widget class="QWebEngineView" name="webEngineView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>591</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="url">
+     <url>
+      <string>https://www.bangkoktransitmap.com/</string>
+     </url>
+    </property>
+   </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../Assets/pic/mainpic.qrc"/>
  </resources>

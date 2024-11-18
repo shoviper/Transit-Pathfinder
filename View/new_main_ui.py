@@ -15,6 +15,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
     QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
     QVBoxLayout, QWidget)
@@ -34,10 +35,6 @@ class Ui_MainWindow(object):
         self.mainlabel.setStyleSheet(u"color: #ff5349;\n"
 "font-size: 36px;\n"
 "")
-        self.mainpicture = QLabel(self.centralwidget)
-        self.mainpicture.setObjectName(u"mainpicture")
-        self.mainpicture.setGeometry(QRect(30, 90, 581, 581))
-        self.mainpicture.setStyleSheet(u"image: url(:/mainpic/skytrainmap.jpeg);")
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setGeometry(QRect(620, 60, 451, 621))
@@ -321,11 +318,15 @@ class Ui_MainWindow(object):
 
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.stackedWidget.addWidget(self.detailpage)
+        self.webEngineView = QWebEngineView(self.centralwidget)
+        self.webEngineView.setObjectName(u"webEngineView")
+        self.webEngineView.setGeometry(QRect(20, 80, 591, 591))
+        self.webEngineView.setUrl(QUrl(u"https://www.bangkoktransitmap.com/"))
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -334,7 +335,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.mainlabel.setText(QCoreApplication.translate("MainWindow", u"TRANSIT PATHFINDER", None))
-        self.mainpicture.setText("")
         self.destlabel.setText(QCoreApplication.translate("MainWindow", u"DESTINATION", None))
         self.confirmbutton.setText(QCoreApplication.translate("MainWindow", u"Confirm", None))
         self.chooselocationlabel.setText(QCoreApplication.translate("MainWindow", u"CHOOSE YOUR LOCATIONS ON THE MAP", None))
