@@ -4,7 +4,6 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QMessageBox, QP
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
 from new_main_ui import *
-import random
 
 from all_station_dict import all_stations_dict
 from service import PrologTransitSystem
@@ -173,7 +172,7 @@ class MainPageWindow(QMainWindow, Ui_MainWindow):
         self.all_cost_detail.setText(str(details["total_cost"]))
         if details["total_distance"] >= 1000:
             self.total_distance.setText(f"{self.meter_to_kilometer(details['total_distance'])}")
-            self.costresultlabel_4.setText("BAHT")
+            self.costresultlabel_4.setText("KM")
         else:
             self.total_distance.setText(str(details["total_distance"]))
     
@@ -218,10 +217,15 @@ class MainPageWindow(QMainWindow, Ui_MainWindow):
                 end = all_stations_dict[trip['stations'][1]]
                 start = start.replace("_", " ").upper()
                 end = end.replace("_", " ").upper()
-                line_details += f"<span style='font-size:14px; color:#6C6B68;'>&nbsp;&nbsp;&nbsp;&nbsp;{start} >>> {end}</span><br>"
+                
+                # Updated formatting with color for the separator
+                line_details += (
+                    f"<span style='font-size:14px; color:#6C6B68;'>&nbsp;&nbsp;&nbsp;&nbsp;{start} "
+                    f"<span style='color:#E98074;'> >>> </span>{end}</span><br>"
+                )
 
             # Append station count, time, and cost with larger font
-            line_details += f"<span style='font-size:18px; color: #E98074'>{line_data['stations']} STATION{'S' if line_data['stations'] > 1 else ''}      ~ {self.convert_time_to_estimated_time(line_data['estimated_time'])}     {line_data['cost']} BAHT</span><br>"
+            line_details += f"<span style='font-size:16px; color: #E98074'>{line_data['stations']} STATION{'S' if line_data['stations'] > 1 else ''}      ~ {self.convert_time_to_estimated_time(line_data['estimated_time'])}     {line_data['cost']} BAHT</span><br>"
             
             result.append(line_details)
             

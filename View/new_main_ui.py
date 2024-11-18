@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
     QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
-    QVBoxLayout, QWidget)
+    QVBoxLayout, QWidget, QFrame)
 import mainpic
 
 class Ui_MainWindow(object):
@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.mainlabel = QLabel(self.centralwidget)
         self.mainlabel.setObjectName(u"mainlabel")
-        self.mainlabel.setGeometry(QRect(30, 30, 600, 35))
+        self.mainlabel.setGeometry(QRect(30, 60, 600, 35))
         self.mainlabel.setStyleSheet(u"color: #E85A4F;\n"
 "font-size: 28px;\n"
 "")
@@ -42,7 +42,7 @@ class Ui_MainWindow(object):
         self.mainpage.setObjectName(u"mainpage")
         self.destcombobox = QComboBox(self.mainpage)
         self.destcombobox.setObjectName(u"destcombobox")
-        self.destcombobox.setGeometry(QRect(190, 350, 250, 41))
+        self.destcombobox.setGeometry(QRect(190, 355, 250, 30))
         self.destlabel = QLabel(self.mainpage)
         self.destlabel.setObjectName(u"destlabel")
         self.destlabel.setGeometry(QRect(30, 360, 121, 21))
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
 "")
         self.startcombobox = QComboBox(self.mainpage)
         self.startcombobox.setObjectName(u"startcombobox")
-        self.startcombobox.setGeometry(QRect(190, 250, 250, 41))
+        self.startcombobox.setGeometry(QRect(190, 255, 250, 30))
         self.startlabel = QLabel(self.mainpage)
         self.startlabel.setObjectName(u"startlabel")
         self.startlabel.setGeometry(QRect(30, 260, 61, 21))
@@ -76,25 +76,25 @@ class Ui_MainWindow(object):
         self.confirmpage.setObjectName(u"confirmpage")
         self.resultlabel = QLabel(self.confirmpage)
         self.resultlabel.setObjectName(u"resultlabel")
-        self.resultlabel.setGeometry(QRect(10, 10, 411, 21))
+        self.resultlabel.setGeometry(QRect(10, 40, 411, 21))
         self.resultlabel.setStyleSheet(u"color: #E85A4F;\n"
 "font-size: 22px;\n"
 "")
         self.routeshortlabel = QLabel(self.confirmpage)
         self.routeshortlabel.setObjectName(u"routeshortlabel")
-        self.routeshortlabel.setGeometry(QRect(10, 300, 71, 21))
+        self.routeshortlabel.setGeometry(QRect(10, 320, 71, 21))
         self.routeshortlabel.setStyleSheet(u"color: #E85A4F;\n"
 "font-size: 22px;\n"
 "")
         self.startresultlabel = QLabel(self.confirmpage)
         self.startresultlabel.setObjectName(u"startresultlabel")
-        self.startresultlabel.setGeometry(QRect(30, 60, 71, 21))
+        self.startresultlabel.setGeometry(QRect(30, 90, 71, 21))
         self.startresultlabel.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 18px;\n"
 "")
         self.destresultlabel = QLabel(self.confirmpage)
         self.destresultlabel.setObjectName(u"destresultlabel")
-        self.destresultlabel.setGeometry(QRect(30, 100, 141, 21))
+        self.destresultlabel.setGeometry(QRect(30, 130, 141, 21))
         self.destresultlabel.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 18px;\n"
 "")
@@ -112,13 +112,13 @@ class Ui_MainWindow(object):
 "")
         self.timetakenresultlabel = QLabel(self.confirmpage)
         self.timetakenresultlabel.setObjectName(u"timetakenresultlabel")
-        self.timetakenresultlabel.setGeometry(QRect(30, 220, 181, 21))
+        self.timetakenresultlabel.setGeometry(QRect(30, 260, 181, 21))
         self.timetakenresultlabel.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px; color: #E98074\n"
 "")
         self.costresultlabel = QLabel(self.confirmpage)
         self.costresultlabel.setObjectName(u"costresultlabel")
-        self.costresultlabel.setGeometry(QRect(30, 260, 181, 21))
+        self.costresultlabel.setGeometry(QRect(30, 220, 181, 21))
         self.costresultlabel.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px; color: #E98074\n"
 "")
@@ -138,19 +138,19 @@ class Ui_MainWindow(object):
 "border-radius: 5px;color: #6C6B68;")
 #         self.timetakenresultlabel_2 = QLabel(self.confirmpage)
 #         self.timetakenresultlabel_2.setObjectName(u"timetakenresultlabel_2")
-#         self.timetakenresultlabel_2.setGeometry(QRect(340, 220, 71, 21))
+#         self.timetakenresultlabel_2.setGeometry(QRect(340, 260, 71, 21))
 #         self.timetakenresultlabel_2.setStyleSheet(u"color: #6C6B68; \n"
 # "font-size: 16px;\n"
 # "")
         self.costresultlabel_2 = QLabel(self.confirmpage)
         self.costresultlabel_2.setObjectName(u"costresultlabel_2")
-        self.costresultlabel_2.setGeometry(QRect(340, 260, 41, 21))
+        self.costresultlabel_2.setGeometry(QRect(340, 220, 41, 21))
         self.costresultlabel_2.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
         self.timetaken_result = QLabel(self.confirmpage)
         self.timetaken_result.setObjectName(u"timetaken_result")
-        self.timetaken_result.setGeometry(QRect(240, 220, 120, 21))
+        self.timetaken_result.setGeometry(QRect(240, 260, 120, 21))
         self.timetaken_result.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
@@ -168,25 +168,25 @@ class Ui_MainWindow(object):
 "")
         self.distance_result = QLabel(self.confirmpage)
         self.distance_result.setObjectName(u"distance_result")
-        self.distance_result.setGeometry(QRect(240, 260, 81, 21))
+        self.distance_result.setGeometry(QRect(240, 220, 81, 21))
         self.distance_result.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
         self.start_result = QLabel(self.confirmpage)
         self.start_result.setObjectName(u"start_result")
-        self.start_result.setGeometry(QRect(190, 60, 261, 21))
+        self.start_result.setGeometry(QRect(190, 90, 261, 21))
         self.start_result.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 18px; color: #E98074\n"
 "")
         self.dest_result = QLabel(self.confirmpage)
         self.dest_result.setObjectName(u"dest_result")
-        self.dest_result.setGeometry(QRect(190, 100, 251, 21))
+        self.dest_result.setGeometry(QRect(190, 130, 251, 21))
         self.dest_result.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 18px; color: #E98074\n"
 "")
         self.scrollArea = QScrollArea(self.confirmpage)
         self.scrollArea.setObjectName(u"scrollArea")
-        self.scrollArea.setGeometry(QRect(10, 330, 441, 201))
+        self.scrollArea.setGeometry(QRect(10, 360, 441, 201))
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.scrollAreaWidgetContents = QWidget()
@@ -213,26 +213,26 @@ class Ui_MainWindow(object):
         self.detailpage.setObjectName(u"detailpage")
         self.routelabel = QLabel(self.detailpage)
         self.routelabel.setObjectName(u"routelabel")
-        self.routelabel.setGeometry(QRect(10, 10, 71, 21))
+        self.routelabel.setGeometry(QRect(10, 40, 71, 21))
         self.routelabel.setStyleSheet(u"color: #E85A4F;\n"
 "font-size: 22px;\n"
 "")
         self.backbutton_2 = QPushButton(self.detailpage)
         self.backbutton_2.setObjectName(u"backbutton_2")
-        self.backbutton_2.setGeometry(QRect(280, 550, 150, 41))
+        self.backbutton_2.setGeometry(QRect(280, 580, 150, 41))
         self.backbutton_2.setStyleSheet(u"background-color: #D8C3A5;\n"
 "font-size: 18px;\n"
 "border: none;\n"
 "border-radius: 5px;color: #6C6B68;")
         self.nostationroutelabel = QLabel(self.detailpage)
         self.nostationroutelabel.setObjectName(u"nostationroutelabel")
-        self.nostationroutelabel.setGeometry(QRect(50, 420, 181, 21))
+        self.nostationroutelabel.setGeometry(QRect(50, 450, 181, 21))
         self.nostationroutelabel.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
         self.timetakenroutelabel = QLabel(self.detailpage)
         self.timetakenroutelabel.setObjectName(u"timetakenroutelabel")
-        self.timetakenroutelabel.setGeometry(QRect(50, 450, 181, 21))
+        self.timetakenroutelabel.setGeometry(QRect(50, 540, 181, 21))
         self.timetakenroutelabel.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
@@ -244,25 +244,25 @@ class Ui_MainWindow(object):
 "")
         self.costroutelabel_2 = QLabel(self.detailpage)
         self.costroutelabel_2.setObjectName(u"costroutelabel_2")
-        self.costroutelabel_2.setGeometry(QRect(320, 480, 41, 21))
+        self.costroutelabel_2.setGeometry(QRect(320, 510, 41, 21))
         self.costroutelabel_2.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
 #         self.timetakenroutelabel_2 = QLabel(self.detailpage)
 #         self.timetakenroutelabel_2.setObjectName(u"timetakenroutelabel_2")
-#         self.timetakenroutelabel_2.setGeometry(QRect(320, 450, 71, 21))
+#         self.timetakenroutelabel_2.setGeometry(QRect(320, 510, 71, 21))
 #         self.timetakenroutelabel_2.setStyleSheet(u"color: #6C6B68; \n"
 # "font-size: 16px;\n"
 # "")
         self.nostationroutelabel_2 = QLabel(self.detailpage)
         self.nostationroutelabel_2.setObjectName(u"nostationroutelabel_2")
-        self.nostationroutelabel_2.setGeometry(QRect(320, 420, 90, 21))
+        self.nostationroutelabel_2.setGeometry(QRect(320, 450, 90, 21))
         self.nostationroutelabel_2.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
         self.timetaken_route = QLabel(self.detailpage)
         self.timetaken_route.setObjectName(u"timetaken_route")
-        self.timetaken_route.setGeometry(QRect(250, 450, 140, 21))
+        self.timetaken_route.setGeometry(QRect(250, 540, 140, 21))
         self.timetaken_route.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
@@ -274,7 +274,7 @@ class Ui_MainWindow(object):
 "")
         self.nostation_route = QLabel(self.detailpage)
         self.nostation_route.setObjectName(u"nostation_route")
-        self.nostation_route.setGeometry(QRect(250, 420, 31, 21))
+        self.nostation_route.setGeometry(QRect(250, 450, 31, 21))
         self.nostation_route.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
@@ -292,13 +292,13 @@ class Ui_MainWindow(object):
 "")
         self.costresultlabel_4 = QLabel(self.detailpage)
         self.costresultlabel_4.setObjectName(u"costresultlabel_4")
-        self.costresultlabel_4.setGeometry(QRect(320, 510, 41, 21))
+        self.costresultlabel_4.setGeometry(QRect(320, 480, 41, 21))
         self.costresultlabel_4.setStyleSheet(u"color: #6C6B68; \n"
 "font-size: 16px;\n"
 "")
         self.scrollArea_2 = QScrollArea(self.detailpage)
         self.scrollArea_2.setObjectName(u"scrollArea_2")
-        self.scrollArea_2.setGeometry(QRect(10, 40, 441, 361))
+        self.scrollArea_2.setGeometry(QRect(10, 70, 441, 361))
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.scrollAreaWidgetContents_2 = QWidget()
@@ -314,13 +314,18 @@ class Ui_MainWindow(object):
         self.detail_label.setStyleSheet(u"color: #6C6B68;\n"
 "font-size: 18px;")
 
+        # Create a frame to act as the border
+        border_frame = QFrame(self.centralwidget)
+        border_frame.setGeometry(QRect(20, 180, 590, 490))
+        border_frame.setStyleSheet("background-color: #D8C3A5; border-radius: 3px;")
+        
         self.verticalLayout_2.addWidget(self.detail_label)
 
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.stackedWidget.addWidget(self.detailpage)
         self.webEngineView = QWebEngineView(self.centralwidget)
         self.webEngineView.setObjectName(u"webEngineView")
-        self.webEngineView.setGeometry(QRect(20, 80, 591, 591))
+        self.webEngineView.setGeometry(QRect(30, 190, 570, 470))
         self.webEngineView.setUrl(QUrl(u"https://www.bangkoktransitmap.com/"))
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -363,7 +368,7 @@ class Ui_MainWindow(object):
         self.nostationroutelabel.setText(QCoreApplication.translate("MainWindow", u"NUMBER OF STATIONS :", None))
         self.timetakenroutelabel.setText(QCoreApplication.translate("MainWindow", u"ESTIMATED TIME :", None))
         self.costroutelabel.setText(QCoreApplication.translate("MainWindow", u"DISTANCE:", None))
-        self.costroutelabel_2.setText(QCoreApplication.translate("MainWindow", u"KM", None))
+        self.costroutelabel_2.setText(QCoreApplication.translate("MainWindow", u"BAHT", None))
         # self.timetakenroutelabel_2.setText(QCoreApplication.translate("MainWindow", u"MINUTES", None))
         self.nostationroutelabel_2.setText(QCoreApplication.translate("MainWindow", u"STATIONS", None))
         self.timetaken_route.setText(QCoreApplication.translate("MainWindow", u"13:00:00", None))
