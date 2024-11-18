@@ -61,19 +61,20 @@ class PrologTransitSystem:
 
         station_counts = {line: count - 1 for line, count in station_counts.items() if count > 0}
         return station_counts
-        
+    
     def query_trip_details(self, path):
         trip_distances = []
         total_distance = 0
-        total_stations = len(path) - 1  # Total segments = stations - 1
+        total_stations = len(path) - 1
         total_cost = 0
-        line_totals = {line: {"distance": 0, "stations": 0, "estimated_time": "00:00:00", "cost": 0} for line in self.lines}
+        line_totals = []
 
         for i in range(len(path) - 1):
             station1 = path[i]
             station2 = path[i + 1]
             query = f'connected("{station1}", "{station2}", Distance).'
             results = list(self.prolog.query(query))
+
             if not results:
                 trip_distances.append({
                     "stations": (station1, station2),
@@ -90,27 +91,35 @@ class PrologTransitSystem:
 
                 for line, stations in self.lines.items():
                     if station1 in stations and station2 in stations:
-                        line_totals[line]["distance"] += distance
-                        line_totals[line]["stations"] += 1
+                        line_data = next((item for item in line_totals if item['line'] == line), None)
+                        if line_data:
+                            line_data["distance"] += distance
+                            line_data["stations"] += 1
+                        else:
+                            line_totals.append({
+                                "line": line,
+                                "distance": distance,
+                                "stations": 1,
+                                "estimated_time": "00:00:00",
+                                "cost": 0
+                            })
                         break
 
-        for line, data in line_totals.items():
-            if data["stations"] > 0:
-                query = f'cost({data["stations"]}, Cost, "{line}").'
+        for line_data in line_totals:
+            if line_data["stations"] > 0:
+                query = f'cost({line_data["stations"]}, Cost, "{line_data["line"]}").'
                 results = list(self.prolog.query(query))
                 if results:
                     cost = int(results[0]["Cost"])
-                    data["cost"] = cost
+                    line_data["cost"] = cost
                     total_cost += cost
 
         total_estimated_time = self.calculate_estimated_time(total_distance)
-        for line, data in line_totals.items():
-            if data["distance"] > 0:
-                data["estimated_time"] = self.calculate_estimated_time(data["distance"])
+        for line_data in line_totals:
+            if line_data["distance"] > 0:
+                line_data["estimated_time"] = self.calculate_estimated_time(line_data["distance"])
 
-        filtered_line_totals = {
-            line: data for line, data in line_totals.items() if data["distance"] > 0
-        }
+        filtered_line_totals = [line_data for line_data in line_totals if line_data["distance"] > 0]
 
         return {
             "trip_details": trip_distances,
@@ -121,23 +130,36 @@ class PrologTransitSystem:
             "line_totals": filtered_line_totals
         }
 
+
     def get_first_last_station_of_lines(self, path):
-        first_last_stations = {}
+        line_ends = []
+        current_line = None
+        first_station = None
+        
+        for i in range(len(path) - 1):
+            station1 = path[i]
+            station2 = path[i + 1]
+            
+            for line, stations in self.lines.items():
+                if station1 in stations and station2 in stations:
+                    if current_line != line:
+                        if current_line is not None:
+                            line_ends.append((current_line, first_station, path[i]))
+                        current_line = line
+                        first_station = station1
+                    break
+        
+        if current_line is not None:
+            line_ends.append((current_line, first_station, path[-1]))
 
-        for line, stations in self.lines.items():
-            line_stations_in_path = [station for station in stations if station in path]
-
-            if line_stations_in_path:
-                first_last_stations[line] = {
-                    "first_station": line_stations_in_path[0],
-                    "last_station": line_stations_in_path[-1]
-                }
-
-        return first_last_stations
+        return line_ends
 
 
-transitSystem = PrologTransitSystem()
+# transitSystem = PrologTransitSystem()
 # print(transitSystem.query_shortest_path("e01", "n03"))
-path = transitSystem.query_shortest_path("e01", "n03").get("path")
-print(transitSystem.query_trip_details(path))
+# path = transitSystem.query_shortest_path("e01", "bl25").get("path")
+# print(path)
+# print()
+# print(transitSystem.query_trip_details(path))
+# print()
 # print(transitSystem.get_first_last_station_of_lines(path))

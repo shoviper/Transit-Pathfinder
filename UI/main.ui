@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: #F4F4DB;</string>
+   <string notr="true">background-color: #EAE7DC;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="mainlabel">
@@ -27,7 +27,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: #ff5349;
+     <string notr="true">color: #E85A4F;
 font-size: 36px;
 </string>
     </property>
@@ -68,7 +68,7 @@ font-size: 36px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000; 
+       <string notr="true">color: #6C6B68; 
 font-size: 20px;
 </string>
       </property>
@@ -86,7 +86,7 @@ font-size: 20px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #e5d3b3;
+       <string notr="true">background-color: #D8C3A5;
 font-size: 22px;
 border: none;
 border-radius: 10px;</string>
@@ -105,7 +105,7 @@ border-radius: 10px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ff5349;
+       <string notr="true">color: #E85A4F;
 font-size: 22px;
 </string>
       </property>
@@ -133,7 +133,7 @@ font-size: 22px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000; 
+       <string notr="true">color: #6C6B68; 
 font-size: 20px;
 </string>
       </property>
@@ -153,7 +153,7 @@ font-size: 20px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ff5349;
+       <string notr="true">color: #E85A4F;
 font-size: 22px;
 </string>
       </property>
@@ -171,7 +171,7 @@ font-size: 22px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ff5349;
+       <string notr="true">color: #E85A4F;
 font-size: 22px;
 </string>
       </property>
@@ -189,7 +189,7 @@ font-size: 22px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000; 
+       <string notr="true">color: #6C6B68; 
 font-size: 18px;
 </string>
       </property>
@@ -207,7 +207,7 @@ font-size: 18px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000; 
+       <string notr="true">color: #6C6B68; 
 font-size: 18px;
 </string>
       </property>
@@ -225,7 +225,7 @@ font-size: 18px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000; 
+       <string notr="true">color: #6C6B68; 
 font-size: 18px;
 </string>
       </property>
@@ -243,7 +243,7 @@ font-size: 18px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -261,7 +261,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -279,7 +279,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -297,7 +297,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #e5d3b3;
+       <string notr="true">background-color: #D8C3A5;
 font-size: 22px;
 border: none;
 border-radius: 10px;</string>
@@ -335,7 +335,7 @@ border-radius: 10px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -353,7 +353,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -371,7 +371,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -389,7 +389,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -407,7 +407,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -425,7 +425,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -443,7 +443,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 18px;
 </string>
       </property>
@@ -461,7 +461,7 @@ font-size: 18px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 18px;
 </string>
       </property>
@@ -509,7 +509,7 @@ font-size: 18px;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: #4d4d4d;
+           <string notr="true">color: #6C6B68;
 font-size: 18px;</string>
           </property>
           <property name="text">
@@ -532,7 +532,7 @@ font-size: 18px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #ff5349;
+       <string notr="true">color: #E85A4F;
 font-size: 22px;
 </string>
       </property>
@@ -550,7 +550,7 @@ font-size: 22px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #e5d3b3;
+       <string notr="true">background-color: #D8C3A5;
 font-size: 22px;
 border: none;
 border-radius: 10px;</string>
@@ -569,7 +569,7 @@ border-radius: 10px;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -587,7 +587,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -605,7 +605,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -623,7 +623,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -641,7 +641,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -659,7 +659,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -677,7 +677,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -695,7 +695,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -713,7 +713,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -731,7 +731,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -749,7 +749,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -767,7 +767,7 @@ font-size: 16px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #4d4d4d; 
+       <string notr="true">color: #6C6B68; 
 font-size: 16px;
 </string>
       </property>
@@ -815,7 +815,7 @@ font-size: 16px;
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: #4d4d4d;
+           <string notr="true">color: #6C6B68;
 font-size: 18px;</string>
           </property>
           <property name="text">
