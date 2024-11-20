@@ -1,4 +1,37 @@
 
+% Heuristic function: calculates straight-line distance as the heuristic.
+displacement(Station1, Station2, Displacement) :-
+    station(Station1, Lat1, Lon1),
+    station(Station2, Lat2, Lon2),
+    HaversineDistance is sqrt((Lat2 - Lat1)^2 + (Lon2 - Lon1)^2),
+    Displacement is HaversineDistance.
+
+% A* search algorithm.
+shortest_path(Start, Goal, Path, Distance) :-
+    astar([[0, 0, [Start]]], Goal, Path, Distance).
+
+% A* core function.
+astar(OpenList, Goal, Path, Distance) :-
+    % Sort the open list by FScore (smallest first).
+    sort(OpenList, [[FScore, GScore, [Goal | RestPath]] | _]),
+    reverse([Goal | RestPath], Path),
+    Distance = GScore.
+
+astar(OpenList, Goal, Path, Distance) :-
+    % Sort the open list by FScore (smallest first).
+    sort(OpenList, [[FScore, GScore, [Current | RestPath]] | Remaining]),
+    findall(
+        [NewFScore, NewGScore, [Next, Current | RestPath]],
+        (connected(Current, Next, StepCost),
+         \+ member(Next, [Current | RestPath]), % Avoid cycles.
+         NewGScore is GScore + StepCost,
+         displacement(Next, Goal, Heuristic),
+         NewFScore is NewGScore + Heuristic),
+        Neighbors
+    ),
+    append(Neighbors, Remaining, NewOpenList),
+    astar(NewOpenList, Goal, Path, Distance).
+
 /*
     =========================================
     
@@ -476,34 +509,6 @@ connected("bl10","pp16", 0).
 connected("pp11","pk01", 0).
 connected("pk01","pp11", 0).
 
-/*
-    =========================================
-    
-    CALCULATE DISPLACEMENT
-    displacement("station1_code", "station2_code", Distance).
-
-    =========================================
-*/
-displacement(Station1, Station2, Distance) :-
-    station(Station1, Lat1, Lon1),
-    station(Station2, Lat2, Lon2),
-    deg_to_rad(Lat1, RadLat1),
-    deg_to_rad(Lat2, RadLat2),
-    deg_to_rad(Lon1, RadLon1),
-    deg_to_rad(Lon2, RadLon2),
-    DeltaLat is RadLat2 - RadLat1,
-    DeltaLon is RadLon2 - RadLon1,
-    A is sin(DeltaLat / 2) ** 2 +
-        cos(RadLat1) * cos(RadLat2) * sin(DeltaLon / 2) ** 2,
-    C is 2 * atan2(sqrt(A), sqrt(1 - A)),
-    EarthRadius is 6371, % Earth radius in kilometers
-    Distance is EarthRadius * C * 1000.
-
-% Convert degrees to radians
-deg_to_rad(Deg, Rad) :-
-    Rad is Deg * pi / 180.
-
-
 /*  
     =========================================
     
@@ -582,3 +587,304 @@ station("g01", 13.721108706335297, 100.5036673229353). % Krung Thon Buri
 station("g02", 13.726473271056536, 100.50902232009399). % Charoen Nakhon
 station("g03", 13.730377318404617, 100.50765388314738). % Khlong San
 
+% MRT Yellow Line
+station("yl01", 13.80645427509791, 100.57494467750705).
+station("yl02", 13.800136480542982, 100.58421177465559).
+station("yl03", 13.794473408731857, 100.59434406078617).
+station("yl04", 13.787356900167339, 100.60714188300538).
+station("yl05", 13.783659613734804, 100.61367807927715).
+station("yl06", 13.778069426418003, 100.62372247733997).
+station("yl07", 13.774335680704642, 100.63035366883302).
+station("yl08", 13.769209160614752, 100.63954335727351).
+station("yl09", 13.761661444634292, 100.64551680510606).
+station("yl10", 13.750731773067146, 100.64487788579682).
+station("yl11", 13.736418756277617, 100.64123634617918).
+station("yl12", 13.72560940374783, 100.64178250397899).
+station("yl13", 13.711633737993676, 100.64406694015717).
+station("yl14", 13.7006186225432, 100.64656421865907).
+station("yl15", 13.690787829746537, 100.64707456934109).
+station("yl16", 13.677771845789517, 100.64609335977258).
+station("yl17", 13.666305703944136, 100.64438319797995).
+station("yl18", 13.656034315296765, 100.64238893933948).
+station("yl19", 13.64459735045294, 100.6368845663855).
+station("yl20", 13.63194010973344, 100.6293754979866).
+station("yl21", 13.627831971861589, 100.62644025830514).
+station("yl22", 13.637416965821881, 100.6086577007878).
+station("yl23", 13.645111170115197, 100.59644446590002).
+
+% MRT Blue Line
+station("bl01", 13.729673796916629, 100.47412005452722).
+station("bl02", 13.739599266704017, 100.47074651465738).
+station("bl03", 13.755038079545528, 100.46921419438372).
+station("bl04", 13.763185428662458, 100.47318821507483).
+station("bl05", 13.77741709162057, 100.485208559441).
+station("bl06", 13.78399850921145, 100.49350874614073).
+station("bl07", 13.792447446351908, 100.50503587263583).
+station("bl08", 13.798908818173587, 100.50969226273891).
+station("bl09", 13.806368062525669, 100.52100949355177).
+station("bl10", 13.80610155098121, 100.53072349521315).
+station("bl11", 13.803061845794687, 100.53923334625404).
+station("bl12", 13.798048918494255, 100.54757367420514).
+station("bl13", 13.802470875182802, 100.55373546578534).
+station("bl14", 13.814175987520603, 100.5601507648022).
+station("bl15", 13.806093898230857, 100.57370006841126).
+station("bl16", 13.799148147933881, 100.57461705396456).
+station("bl17", 13.789894608454736, 100.57418231604076).
+station("bl18", 13.778548574704342, 100.57368303359122).
+station("bl19", 13.766303076557945, 100.5702164228456).
+station("bl20", 13.757899896523325, 100.56554139653991).
+station("bl21", 13.748706450125452, 100.56314649892433).
+station("bl22", 13.738531526987114, 100.5614435214749).
+station("bl23", 13.723142274226019, 100.56006507179342).
+station("bl24", 13.72228033724969, 100.55390957950583).
+station("bl25", 13.725737554111324, 100.54563159161165).
+station("bl26", 13.729239581238765, 100.536558063305).
+station("bl27", 13.732368956374904, 100.53007679165034).
+station("bl28", 13.73783166995837, 100.51712236812504).
+station("bl29", 13.74199630372706, 100.51020509550047).
+station("bl30", 13.747170169232533, 100.50223580608055).
+station("bl31", 13.74384067531377, 100.49466516536864).
+station("bl32", 13.738331921644775, 100.48528635690516).
+station("bl33", 13.724606274206172, 100.46517711747858).
+station("bl34", 13.72039717262863, 100.45711079876423).
+station("bl35", 13.715513051391, 100.44558226214944).
+station("bl36", 13.712932307753412, 100.43415725446191).
+station("bl37", 13.711943533836777, 100.42242238629565).
+station("bl38", 13.71094662086454, 100.4100202663695).
+
+% MRT Pink Line
+
+% MRT Purple Line
+
+% SRTET Red Line
+
+% APL Line
+
+/*
+    =========================================
+    
+    % ESTIMATE COST
+    cost(no. Of stations, cost, line).
+
+    =========================================
+*/
+% BTS Dark Green Line
+cost(0, 17, "dark_green").
+cost(1, 17, "dark_green").
+cost(2, 25, "dark_green").
+cost(3, 28, "dark_green").
+cost(4, 32, "dark_green").
+cost(5, 35, "dark_green").
+cost(6, 40, "dark_green").
+cost(7, 43, "dark_green").
+cost(8, 47, "dark_green").
+cost(9, 47, "dark_green").
+cost(10, 47, "dark_green").
+cost(11, 47, "dark_green").
+cost(12, 47, "dark_green").
+cost(13, 47, "dark_green").
+cost(14, 47, "dark_green").
+
+% BTS Light Green Line
+cost(0, 17, "light_green").
+cost(1, 17, "light_green").
+cost(2, 25, "light_green").
+cost(3, 28, "light_green").
+cost(4, 32, "light_green").
+cost(5, 35, "light_green").
+cost(6, 40, "light_green").
+cost(7, 43, "light_green").
+cost(8, 47, "light_green").
+cost(9, 47, "light_green").
+cost(10, 47, "light_green").
+cost(11, 47, "light_green").
+cost(12, 47, "light_green").
+cost(13, 47, "light_green").
+cost(14, 47, "light_green").
+cost(15, 47, "light_green").
+cost(16, 47, "light_green").
+cost(17, 47, "light_green").
+cost(18, 47, "light_green").
+cost(19, 47, "light_green").
+cost(20, 47, "light_green").
+cost(21, 47, "light_green").
+cost(22, 47, "light_green").
+cost(23, 47, "light_green").
+cost(24, 47, "light_green").
+cost(25, 47, "light_green").
+cost(26, 47, "light_green").
+cost(27, 47, "light_green").
+cost(28, 47, "light_green").
+cost(29, 47, "light_green").
+cost(30, 47, "light_green").
+cost(31, 47, "light_green").
+cost(32, 47, "light_green").
+cost(33, 47, "light_green").
+cost(34, 47, "light_green").
+cost(35, 47, "light_green").
+cost(36, 47, "light_green").
+cost(37, 47, "light_green").
+cost(38, 47, "light_green").
+cost(39, 47, "light_green").
+cost(40, 47, "light_green").
+cost(41, 47, "light_green").
+cost(42, 47, "light_green").
+cost(43, 47, "light_green").
+cost(44, 47, "light_green").
+cost(45, 47, "light_green").
+cost(46, 47, "light_green").
+cost(47, 47, "light_green").
+cost(48, 47, "light_green").
+
+% BTS Gold Line
+cost(0, 16, "gold").
+cost(1, 16, "gold").
+cost(2, 16, "gold").
+cost(3, 16, "gold").
+
+% MRT Pink Line
+cost(0, 15, "pink").
+cost(1, 15, "pink").
+cost(2, 18, "pink").
+cost(3, 23, "pink").
+cost(4, 28, "pink").
+cost(5, 30, "pink").
+cost(6, 34, "pink").
+cost(7, 37, "pink").
+cost(8, 41, "pink").
+cost(9, 44, "pink").
+cost(10, 45, "pink").
+cost(11, 45, "pink").
+cost(12, 45, "pink").
+cost(13, 45, "pink").
+cost(14, 45, "pink").
+cost(15, 45, "pink").
+cost(16, 45, "pink").
+cost(17, 45, "pink").
+cost(18, 45, "pink").
+cost(19, 45, "pink").
+cost(20, 45, "pink").
+cost(21, 45, "pink").
+cost(22, 45, "pink").
+cost(23, 45, "pink").
+cost(24, 45, "pink").
+cost(25, 45, "pink").
+cost(26, 45, "pink").
+cost(27, 45, "pink").
+cost(28, 45, "pink").
+cost(29, 45, "pink").
+cost(30, 45, "pink").
+
+% MRT Yellow Line
+cost(0, 15, "yellow").
+cost(1, 15, "yellow").
+cost(2, 19, "yellow").
+cost(3, 23, "yellow").
+cost(4, 27, "yellow").
+cost(5, 30, "yellow").
+cost(6, 33, "yellow").
+cost(7, 36, "yellow").
+cost(8, 39, "yellow").
+cost(9, 42, "yellow").
+cost(10, 45, "yellow").
+cost(11, 45, "yellow").
+cost(12, 45, "yellow").
+cost(13, 45, "yellow").
+cost(14, 45, "yellow").
+cost(15, 45, "yellow").
+cost(16, 45, "yellow").
+cost(17, 45, "yellow").
+cost(18, 45, "yellow").
+cost(19, 45, "yellow").
+cost(20, 45, "yellow").
+cost(21, 45, "yellow").
+cost(22, 45, "yellow").
+cost(23, 45, "yellow").
+
+% MRT Blue Line
+cost(0, 17, "blue").
+cost(1, 17, "blue").
+cost(2, 19, "blue").
+cost(3, 21, "blue").
+cost(4, 24, "blue").
+cost(5, 26, "blue").
+cost(6, 29, "blue").
+cost(7, 31, "blue").
+cost(8, 33, "blue").
+cost(9, 36, "blue").
+cost(10, 38, "blue").
+cost(11, 41, "blue").
+cost(12, 43, "blue").
+cost(13, 43, "blue").
+cost(14, 43, "blue").
+cost(15, 43, "blue").
+cost(16, 43, "blue").
+cost(17, 43, "blue").
+cost(18, 43, "blue").
+cost(19, 43, "blue").
+cost(20, 43, "blue").
+cost(21, 43, "blue").
+cost(22, 43, "blue").
+cost(23, 43, "blue").
+cost(24, 43, "blue").
+cost(25, 43, "blue").
+cost(26, 43, "blue").
+cost(27, 43, "blue").
+cost(28, 43, "blue").
+cost(29, 43, "blue").
+cost(30, 43, "blue").
+cost(31, 43, "blue").
+cost(32, 43, "blue").
+cost(33, 43, "blue").
+cost(34, 43, "blue").
+cost(35, 43, "blue").
+cost(36, 43, "blue").
+cost(37, 43, "blue").
+cost(38, 43, "blue").
+
+% MRT Purple Line
+cost(0, 16, "purple").
+cost(1, 16, "purple").
+cost(2, 18, "purple").
+cost(3, 21, "purple").
+cost(4, 23, "purple").
+cost(5, 26, "purple").
+cost(6, 29, "purple").
+cost(7, 31, "purple").
+cost(8, 34, "purple").
+cost(9, 36, "purple").
+cost(10, 39, "purple").
+cost(11, 42, "purple").
+cost(12, 42, "purple").
+cost(13, 42, "purple").
+cost(14, 42, "purple").
+cost(15, 42, "purple").
+cost(16, 42, "purple").
+
+% SRTET Red Line
+cost(0, 14, "red").
+cost(1, 14, "red").
+cost(2, 16, "red").
+cost(3, 19, "red").
+cost(4, 23, "red").
+cost(5, 26, "red").
+cost(6, 29, "red").
+cost(7, 33, "red").
+cost(8, 39, "red").
+cost(9, 42, "red").
+cost(10, 42, "red").
+cost(11, 42, "red").
+cost(12, 42, "red").
+cost(13, 42, "red").
+cost(14, 42, "red").
+
+% APL Line
+cost(0, 15, "apl").
+cost(1, 15, "apl").
+cost(2, 20, "apl").
+cost(3, 25, "apl").
+cost(4, 30, "apl").
+cost(5, 35, "apl").
+cost(6, 40, "apl").
+cost(7, 45, "apl").
+cost(8, 45, "apl").

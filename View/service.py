@@ -3,7 +3,7 @@ from pyswip import Prolog
 class PrologTransitSystem:
     def __init__(self):
         self.prolog = Prolog()
-        self.prolog_file = "newtrain.pl"
+        self.prolog_file = "train_v2.pl"
         self.lines = {
                         'dark_green' : ['w01', 'cen', 's01', 's02', 's03', 's04', 's05', 's06', 's07', 's08', 's09', 's10', 's11', 's12'],
                         'light_green' : ['cen', 'e01', 'e02', 'e03', 'e04', 'e05', 'e06', 'e07', 'e08', 'e09', 'e10', 'e11', 'e12', 'e13', 'e14', 'e15', 'e16', 'e17', 'e18', 'e19', 'e20', 'e21', 'e22', 'e23', 'n01', 'n02', 'n03', 'n04', 'n05', 'n07', 'n08', 'n09', 'n10', 'n11', 'n12', 'n13', 'n14', 'n15', 'n16', 'n17', 'n18', 'n19', 'n20', 'n21', 'n22', 'n23', 'n24'],
