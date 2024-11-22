@@ -130,7 +130,6 @@ class PrologTransitSystem:
             "line_totals": filtered_line_totals
         }
 
-
     def get_first_last_station_of_lines(self, path):
         line_ends = []
         current_line = None
@@ -142,9 +141,9 @@ class PrologTransitSystem:
             
             for line, stations in self.lines.items():
                 if station1 in stations and station2 in stations:
+                    if current_line is not None and current_line != line:
+                        line_ends.append((current_line, first_station, path[i]))
                     if current_line != line:
-                        if current_line is not None:
-                            line_ends.append((current_line, first_station, path[i]))
                         current_line = line
                         first_station = station1
                     break
@@ -154,12 +153,11 @@ class PrologTransitSystem:
 
         return line_ends
 
-
 # transitSystem = PrologTransitSystem()
-# print(transitSystem.query_shortest_path("e01", "n03"))
-# path = transitSystem.query_shortest_path("e01", "bl25").get("path")
+# print(transitSystem.query_shortest_path("cen", "a02"))
+# path = transitSystem.query_shortest_path("cen", "a02").get("path")
 # print(path)
 # print()
 # print(transitSystem.query_trip_details(path))
 # print()
-# print(transitSystem.get_first_last_station_of_lines(path))
+# print(transitSystem.get_first_last_station_of_lines(['cen', 'e01', 'e02', 'e03', 'e04', 'bl22', 'bl21', 'a06', 'a05', 'a04', 'a03', 'a02']))
