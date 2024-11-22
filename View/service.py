@@ -142,7 +142,7 @@ class PrologTransitSystem:
             for line, stations in self.lines.items():
                 if station1 in stations and station2 in stations:
                     if current_line is not None and current_line != line:
-                        line_ends.append((current_line, first_station, path[i]))
+                        line_ends.append((current_line, first_station, path[i-1]))
                     if current_line != line:
                         current_line = line
                         first_station = station1
