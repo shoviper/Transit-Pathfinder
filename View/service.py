@@ -35,6 +35,7 @@ class PrologTransitSystem:
         
 
     def query_shortest_path(self, start_station, end_station):
+        print(f"Finding shortest path from {start_station} to {end_station}...")
         query = f'shortest_path("{start_station}", "{end_station}", Path, Distance).'
         results = list(self.prolog.query(query))
         if not results:
