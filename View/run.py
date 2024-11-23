@@ -5,7 +5,8 @@ from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
 from new_main_ui import *
 
-from all_station_dict import all_stations_dict
+from all_station_dict import *
+from image_editor import *
 from service import PrologTransitSystem
 
 class MainPageWindow(QMainWindow, Ui_MainWindow):
@@ -110,6 +111,20 @@ class MainPageWindow(QMainWindow, Ui_MainWindow):
         # Route Details
         details = PrologTransitSystem().get_first_last_station_of_lines(result["path"])
         # print(details)
+        
+        # Adding marker
+        add_marker_to_original(station_coords[result["path"][0]]["x"], station_coords[result["path"][0]]["y"])
+
+        for i, station in enumerate(result["path"]):
+            if i == 0:
+                continue
+            elif i == len(result["path"]) - 1:
+                add_marker_to_destination(station_coords[station]["x"], station_coords[station]["y"])
+            else:
+                add_marker_to_current(station_coords[station]["x"], station_coords[station]["y"])
+
+            
+        self.zoomable_image.load_image("../Assets/pic/current.png")
         
         # Clear existing labels in the scroll area
         while self.scrollAreaWidgetContents.layout().count():

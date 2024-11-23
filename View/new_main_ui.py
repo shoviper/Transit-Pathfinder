@@ -14,13 +14,105 @@ from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
+    QPalette, QPixmap, QRadialGradient, QTransform, QWheelEvent)
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QMainWindow,
     QPushButton, QScrollArea, QSizePolicy, QStackedWidget,
     QVBoxLayout, QWidget, QFrame)
 import mainpic
+import os
 
+class ZoomableImageLabel(QLabel):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.zoom_factor = 1.0
+        self.original_pixmap = None
+        self.scaled_pixmap = None
+        self.setScaledContents(False)
+        
+        # Pan functionality variables
+        self.last_mouse_pos = None
+        self.current_offset = QPoint(0, 0)
+        self.setMouseTracking(True)
+
+    def load_image(self, image_path):
+        # Ensure the image path exists
+        if not os.path.exists(image_path):
+            print(f"Image not found at {image_path}")
+            return
+
+        self.original_pixmap = QPixmap(image_path)
+        self.scaled_pixmap = self.original_pixmap
+        self.update_pixmap()
+
+    def update_pixmap(self):
+        # Scale the pixmap
+        scaled_width = int(self.original_pixmap.width() * self.zoom_factor)
+        scaled_height = int(self.original_pixmap.height() * self.zoom_factor)
+        
+        self.scaled_pixmap = self.original_pixmap.scaled(
+            scaled_width, 
+            scaled_height, 
+            Qt.AspectRatioMode.KeepAspectRatio, 
+            Qt.TransformationMode.SmoothTransformation
+        )
+        
+        # Create a painter to draw the scaled pixmap with offset
+        painter_pixmap = QPixmap(self.scaled_pixmap.size())
+        painter_pixmap.fill(Qt.GlobalColor.transparent)
+        painter = QPainter(painter_pixmap)
+        painter.drawPixmap(self.current_offset, self.scaled_pixmap)
+        painter.end()
+        
+        self.setPixmap(painter_pixmap)
+
+    def wheelEvent(self, event: QWheelEvent):
+        # Zoom in or out based on wheel movement
+        zoom_in_factor = 1.2
+        zoom_out_factor = 1 / zoom_in_factor
+
+        # Store mouse position relative to the image
+        mouse_pos = event.position().toPoint()
+
+        if event.angleDelta().y() > 0:
+            # Zoom in
+            self.zoom_factor *= zoom_in_factor
+        else:
+            # Zoom out
+            self.zoom_factor *= zoom_out_factor
+
+        # Limit zoom range
+        self.zoom_factor = max(0.1, min(self.zoom_factor, 5.0))
+
+        self.update_pixmap()
+
+    def mousePressEvent(self, event):
+        # Store initial mouse position for dragging
+        if event.button() == Qt.MouseButton.LeftButton:
+            self.last_mouse_pos = event.pos()
+            self.setCursor(Qt.CursorShape.ClosedHandCursor)
+
+    def mouseMoveEvent(self, event):
+        # Pan the image when dragging
+        if event.buttons() & Qt.MouseButton.LeftButton and self.last_mouse_pos:
+            # Calculate the delta movement
+            delta = event.pos() - self.last_mouse_pos
+            
+            # Update the current offset
+            self.current_offset += delta
+            
+            # Redraw the pixmap
+            self.update_pixmap()
+            
+            # Update last mouse position
+            self.last_mouse_pos = event.pos()
+
+    def mouseReleaseEvent(self, event):
+        # Reset cursor and last mouse position
+        if event.button() == Qt.MouseButton.LeftButton:
+            self.last_mouse_pos = None
+            self.setCursor(Qt.CursorShape.ArrowCursor)
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -323,10 +415,14 @@ class Ui_MainWindow(object):
 
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.stackedWidget.addWidget(self.detailpage)
-        self.webEngineView = QWebEngineView(self.centralwidget)
-        self.webEngineView.setObjectName(u"webEngineView")
-        self.webEngineView.setGeometry(QRect(30, 190, 570, 470))
-        self.webEngineView.setUrl(QUrl(u"https://www.bangkoktransitmap.com/"))
+        self.zoomable_image = ZoomableImageLabel(self.centralwidget)
+        self.zoomable_image.setObjectName(u"zoomable_image")
+        self.zoomable_image.setGeometry(QRect(30, 190, 570, 470))
+        
+        # Load the image
+        self.zoomable_image.load_image("../Assets/pic/skytrainmap.jpeg")
+        
+        # Rest of the setup remains the same
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
